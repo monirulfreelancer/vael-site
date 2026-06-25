@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0b;
+  --color-surface: #141416;
+  --color-surface2: #1b1b1e;
+  --color-accent: #ffc24b;
+  --color-accent-dim: #c9913a;
+  --color-text: #fafaf7;
+  --color-muted: #8a8a8f;
+  --color-border: #232327;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #0a0a0b;
+}
+
+/* Mono eyebrow label — the signature element */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Prose for case study body */
+.prose-vael {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: #d6d6d2;
+}
+.prose-vael h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 2.5rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+.prose-vael p {
+  margin: 0 0 1.1rem;
+}
+.prose-vael ul {
+  margin: 0 0 1.1rem;
+  padding-left: 0;
+  list-style: none;
+}
+.prose-vael li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.prose-vael li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
+.prose-vael img {
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  margin: 1.5rem 0;
+  width: 100%;
+}
