@@ -16,7 +16,7 @@ export default function Hero() {
               <p className="eyebrow mb-5">AI software development agency</p>
             </Reveal>
             <Reveal delay={80}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">
+              <h1 className="h-display text-4xl sm:text-5xl lg:text-[3.75rem] font-semibold">
                 We build AI-powered software that moves your business{" "}
                 <span className="text-accent">forward.</span>
               </h1>

@@ -38,7 +38,7 @@ export default function Testimonials() {
         <div className="mt-14 grid md:grid-cols-3 gap-5">
           {items.map((t, i) => (
             <Reveal key={t.author} delay={i * 80}>
-              <figure className="h-full rounded-2xl border border-border bg-surface p-7 flex flex-col">
+              <figure className="card h-full p-7 flex flex-col">
                 <div className="text-accent text-sm mb-4">
                   {"★".repeat(t.rating)}
                 </div>

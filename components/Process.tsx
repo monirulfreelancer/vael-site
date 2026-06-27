@@ -65,7 +65,7 @@ export default function Process() {
         <div className="mt-14 grid lg:grid-cols-4 gap-5">
           {phases.map((p, i) => (
             <Reveal key={p.no} delay={i * 80}>
-              <div className="h-full rounded-2xl border border-border bg-surface p-6 relative">
+              <div className="card h-full p-6 relative">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-3xl text-accent">{p.no}</span>
                   <span className="font-mono text-[11px] text-muted border border-border rounded-full px-2.5 py-1">

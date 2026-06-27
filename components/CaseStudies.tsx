@@ -20,7 +20,7 @@ export default function CaseStudies() {
             <Reveal key={c.slug} delay={i * 80}>
               <Link
                 href={`/work/${c.slug}`}
-                className="group block h-full rounded-2xl border border-border bg-surface overflow-hidden hover:border-accent/60 transition-colors"
+                className="card group block h-full overflow-hidden"
               >
                 <div className="aspect-[16/10] bg-surface2 overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}

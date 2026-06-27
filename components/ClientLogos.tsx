@@ -37,7 +37,7 @@ function LogoRow() {
 export default function ClientLogos() {
   return (
     <section className="py-12 border-t border-border section-soft">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 text-center">
         <Reveal>
           <p className="eyebrow text-center !text-muted mb-8">
             Trusted by teams who needed it shipped

@@ -45,7 +45,7 @@ export default function Services() {
         <div className="mt-14 grid sm:grid-cols-2 gap-5">
           {services.map((s, i) => (
             <Reveal key={s.name} delay={i * 80}>
-              <div className="group h-full rounded-2xl border border-border bg-surface p-7 hover:border-accent/60 transition-colors">
+              <div className="card group h-full p-7">
                 <div className="text-2xl text-accent mb-5">{s.icon}</div>
                 <h3 className="text-xl font-semibold">{s.name}</h3>
                 <p className="mt-1.5 font-medium text-text/90">{s.promise}</p>
