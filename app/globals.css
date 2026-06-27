@@ -10,8 +10,9 @@
   --color-muted: #9a9aa0;
   --color-border: #242428;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk Variable", "Inter Variable", sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
 }
 
 :root { color-scheme: dark; }
@@ -64,8 +65,8 @@ body {
   opacity: 0.7;
 }
 
-.h-display { letter-spacing: -0.03em; line-height: 1.02; }
-h1, h2, h3 { letter-spacing: -0.02em; }
+.h-display { font-family: var(--font-display); letter-spacing: -0.03em; line-height: 1.02; }
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; }
 
 /* Premium card hover */
 .card {
