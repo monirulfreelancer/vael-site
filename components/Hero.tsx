@@ -51,25 +51,88 @@ export default function Hero() {
             </Reveal>
           </div>
 
-          {/* Visual: terminal-style speed motif */}
+          {/* Visual: product dashboard mockup */}
           <div className="lg:col-span-5">
             <Reveal delay={200}>
-              <div className="rounded-2xl border border-border bg-surface p-5 font-mono text-sm">
-                <div className="flex gap-1.5 mb-4">
-                  <span className="w-3 h-3 rounded-full bg-border" />
-                  <span className="w-3 h-3 rounded-full bg-border" />
-                  <span className="w-3 h-3 rounded-full bg-border" />
+              <div className="relative">
+                {/* soft accent shape behind */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -inset-6 -z-10 rounded-[28px] opacity-[0.12] blur-2xl"
+                  style={{ background: "radial-gradient(closest-side, #FFC24B, transparent)" }}
+                />
+                <div className="rounded-2xl border border-border bg-surface overflow-hidden shadow-2xl shadow-black/40 lg:rotate-[1.5deg] hover:rotate-0 transition-transform duration-500">
+                  {/* window bar */}
+                  <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border bg-surface2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-border" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-border" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-border" />
+                    <span className="ml-3 font-mono text-[11px] text-muted">
+                      app.vael.studio/dashboard
+                    </span>
+                  </div>
+
+                  <div className="flex">
+                    {/* sidebar */}
+                    <div className="hidden sm:flex flex-col gap-3 w-28 shrink-0 border-r border-border p-3">
+                      <div className="flex items-center gap-1.5">
+                        <span className="grid place-items-center w-5 h-5 rounded border border-accent text-accent font-mono text-[10px]">V</span>
+                      </div>
+                      {["Overview", "Leads", "Reports", "AI Agents", "Settings"].map((it, i) => (
+                        <div
+                          key={it}
+                          className={`font-mono text-[10px] rounded px-2 py-1 ${
+                            i === 1 ? "bg-accent/15 text-accent" : "text-muted"
+                          }`}
+                        >
+                          {it}
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* main panel */}
+                    <div className="flex-1 p-4 space-y-3">
+                      {/* stat cards */}
+                      <div className="grid grid-cols-3 gap-2">
+                        {[
+                          { v: "19K", l: "Leads" },
+                          { v: "68%", l: "Resolved" },
+                          { v: "4.2x", l: "Faster" },
+                        ].map((s) => (
+                          <div key={s.l} className="rounded-lg border border-border p-2">
+                            <p className="text-accent font-semibold text-sm">{s.v}</p>
+                            <p className="font-mono text-[9px] text-muted">{s.l}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* table */}
+                      <div className="rounded-lg border border-border overflow-hidden">
+                        <div className="grid grid-cols-3 gap-2 px-3 py-2 border-b border-border bg-surface2 font-mono text-[9px] text-muted">
+                          <span>NAME</span><span>COMPANY</span><span>STATUS</span>
+                        </div>
+                        {[
+                          ["Philippe C.", "Cesson", "Verified"],
+                          ["Jessie B.", "CallAction", "Verified"],
+                          ["Greyson D.", "Swyfto", "Pending"],
+                          ["Natasha O.", "MAMi", "Verified"],
+                          ["Erik H.", "Hot Bot", "Verified"],
+                        ].map((r, i) => (
+                          <div
+                            key={i}
+                            className="grid grid-cols-3 gap-2 px-3 py-2 text-[10px] text-muted border-b border-border/60 last:border-0"
+                          >
+                            <span className="text-text/80 truncate">{r[0]}</span>
+                            <span className="truncate">{r[1]}</span>
+                            <span className={r[2] === "Verified" ? "text-accent" : "text-muted"}>
+                              ● {r[2]}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-muted">
-                  <span className="text-accent">$</span> vael ship --project mvp
-                </p>
-                <p className="mt-2 text-muted">→ scoping features…</p>
-                <p className="text-muted">→ building with AI…</p>
-                <p className="text-muted">→ testing &amp; deploying…</p>
-                <p className="mt-3 text-text">
-                  ✓ shipped in <span className="text-accent">6 weeks</span>,
-                  not 6 months
-                </p>
               </div>
             </Reveal>
           </div>
