@@ -3,10 +3,10 @@ import Reveal from "./Reveal";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
-      {/* ambient accent glow */}
+      {/* ambient warm glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 right-0 h-[480px] w-[480px] rounded-full opacity-[0.08] blur-3xl"
+        className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 h-[620px] w-[820px] rounded-full opacity-[0.16] blur-3xl"
         style={{ background: "radial-gradient(closest-side, #FFC24B, transparent)" }}
       />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
