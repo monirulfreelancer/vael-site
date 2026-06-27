@@ -78,7 +78,7 @@ export default function Hero() {
                       <div className="flex items-center gap-1.5">
                         <span className="grid place-items-center w-5 h-5 rounded border border-accent text-accent font-mono text-[10px]">V</span>
                       </div>
-                      {["Overview", "Leads", "Reports", "AI Agents", "Settings"].map((it, i) => (
+                      {["Overview", "Projects", "Clients", "Builds", "Settings"].map((it, i) => (
                         <div
                           key={it}
                           className={`font-mono text-[10px] rounded px-2 py-1 ${
@@ -95,9 +95,9 @@ export default function Hero() {
                       {/* stat cards */}
                       <div className="grid grid-cols-3 gap-2">
                         {[
-                          { v: "19K", l: "Leads" },
-                          { v: "68%", l: "Resolved" },
-                          { v: "4.2x", l: "Faster" },
+                          { v: "8", l: "Active" },
+                          { v: "100%", l: "On-time" },
+                          { v: "24", l: "Shipped" },
                         ].map((s) => (
                           <div key={s.l} className="rounded-lg border border-border p-2">
                             <p className="text-accent font-semibold text-sm">{s.v}</p>
@@ -106,27 +106,41 @@ export default function Hero() {
                         ))}
                       </div>
 
-                      {/* table */}
+                      {/* project pipeline */}
                       <div className="rounded-lg border border-border overflow-hidden">
-                        <div className="grid grid-cols-3 gap-2 px-3 py-2 border-b border-border bg-surface2 font-mono text-[9px] text-muted">
-                          <span>NAME</span><span>COMPANY</span><span>STATUS</span>
+                        <div className="grid grid-cols-[1fr_auto] gap-2 px-3 py-2 border-b border-border bg-surface2 font-mono text-[9px] text-muted">
+                          <span>PROJECT</span><span>STATUS</span>
                         </div>
                         {[
-                          ["Philippe C.", "Cesson", "Verified"],
-                          ["Jessie B.", "CallAction", "Verified"],
-                          ["Greyson D.", "Swyfto", "Pending"],
-                          ["Natasha O.", "MAMi", "Verified"],
-                          ["Erik H.", "Hot Bot", "Verified"],
-                        ].map((r, i) => (
+                          { name: "Booking platform", client: "Northwind", status: "Shipped", pct: 100 },
+                          { name: "AI support agent", client: "Apex Labs", status: "In build", pct: 72 },
+                          { name: "E-commerce app", client: "Brightly", status: "In build", pct: 48 },
+                          { name: "Ops dashboard", client: "Vertex", status: "In review", pct: 90 },
+                        ].map((p, i) => (
                           <div
                             key={i}
-                            className="grid grid-cols-3 gap-2 px-3 py-2 text-[10px] text-muted border-b border-border/60 last:border-0"
+                            className="px-3 py-2 border-b border-border/60 last:border-0"
                           >
-                            <span className="text-text/80 truncate">{r[0]}</span>
-                            <span className="truncate">{r[1]}</span>
-                            <span className={r[2] === "Verified" ? "text-accent" : "text-muted"}>
-                              ● {r[2]}
-                            </span>
+                            <div className="flex items-center justify-between">
+                              <div className="min-w-0">
+                                <p className="text-[10px] text-text/80 truncate">{p.name}</p>
+                                <p className="font-mono text-[9px] text-muted truncate">{p.client}</p>
+                              </div>
+                              <span
+                                className={`font-mono text-[9px] shrink-0 ml-2 ${
+                                  p.status === "Shipped" ? "text-accent" : "text-muted"
+                                }`}
+                              >
+                                {p.status}
+                              </span>
+                            </div>
+                            {/* progress bar */}
+                            <div className="mt-1.5 h-1 rounded-full bg-border overflow-hidden">
+                              <div
+                                className="h-full rounded-full bg-accent"
+                                style={{ width: `${p.pct}%` }}
+                              />
+                            </div>
                           </div>
                         ))}
                       </div>
