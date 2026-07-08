@@ -7,6 +7,13 @@
 - Business Automation: automations that remove repetitive work from teams
 - Custom Software & MVPs: bespoke systems, internal tools, and validated MVPs
 
+## Products we build and run ourselves
+- FridayLead (B2B lead generation): https://fridaylead.com
+- ContentFlow (AI content generation): https://topanglelead.com
+- mailverify (email verification): https://goanglelead.com
+- AutoZoom (AI screen recording): https://autozoom.app
+- AngleDesk (agency operations): https://angleleadteam.com
+
 ## Pricing
 - Launch (MVP): from $10,000, 3 to 5 weeks
 - Build (full product): $25,000 to $75,000, 6 to 10 weeks

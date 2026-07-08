@@ -33,8 +33,15 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="section border-t border-border"
+      className="section relative overflow-hidden border-t border-border"
     >
+      <div
+        aria-hidden
+        className="glow -left-56 top-1/2 h-[600px] w-[600px] -translate-y-1/2 opacity-[0.10]"
+        style={{
+          background: "radial-gradient(closest-side, #FFC24B, transparent)",
+        }}
+      />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">

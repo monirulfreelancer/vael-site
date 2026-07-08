@@ -116,6 +116,21 @@ h3 {
     }
   }
 
+  /* Ambient light source. Position, size, color, and opacity come from the
+     element's own classes and inline background. */
+  .glow {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 9999px;
+    filter: blur(120px);
+    z-index: -10;
+  }
+
+  /* One-shot fade used by the testimonial carousel when the slide changes. */
+  .fade-in {
+    animation: fade-in 0.3s ease;
+  }
+
   /* Amber CTA lift + glow. Buttons that use this drop `transition-colors` so
      this transition owns transform, shadow, and background together. */
   .btn-primary {
@@ -247,6 +262,15 @@ h3 {
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

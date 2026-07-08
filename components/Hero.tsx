@@ -20,12 +20,12 @@ function DashboardMockup() {
     <div className="relative">
       <div
         aria-hidden
-        className="absolute -inset-6 -z-10 rounded-3xl opacity-[0.12] blur-3xl"
+        className="glow -inset-10 opacity-[0.16]"
         style={{
           background: "radial-gradient(closest-side, #FFC24B, transparent)",
         }}
       />
-      <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] transition-transform duration-500 lg:rotate-[1.5deg] lg:hover:rotate-0">
+      <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-[0_50px_120px_-24px_rgba(0,0,0,0.85)]">
         <div className="flex items-center gap-2 border-b border-border bg-surface2 px-4 py-2.5">
           <span className="h-2 w-2 rounded-full bg-muted/30" />
           <span className="h-2 w-2 rounded-full bg-muted/30" />
@@ -128,65 +128,71 @@ export default function Hero() {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[620px] w-[820px] -translate-x-1/2 -translate-y-1/4 opacity-[0.16] blur-3xl"
+        className="glow left-1/2 top-0 h-[620px] w-[1000px] -translate-x-1/2 -translate-y-1/4 opacity-[0.22]"
         style={{
           background: "radial-gradient(closest-side, #FFC24B, transparent)",
         }}
       />
+      <div
+        aria-hidden
+        className="glow left-[12%] top-48 h-[420px] w-[420px] opacity-[0.10]"
+        style={{
+          background:
+            "radial-gradient(closest-side, rgba(255,140,50,0.9), transparent)",
+        }}
+      />
 
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-7">
-            <Reveal>
-              <span className="eyebrow">AI SOFTWARE DEVELOPMENT AGENCY</span>
-            </Reveal>
-            <Reveal delay={80}>
-              <h1
-                id="hero-heading"
-                className="h-display mt-6 text-5xl font-semibold sm:text-6xl lg:text-7xl"
+      <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
+        <Reveal>
+          <span className="eyebrow text-center">
+            AI SOFTWARE DEVELOPMENT AGENCY
+          </span>
+        </Reveal>
+        <Reveal delay={80}>
+          <h1
+            id="hero-heading"
+            className="h-display mt-6 text-5xl font-semibold sm:text-6xl lg:text-7xl"
+          >
+            We build <span className="text-accent">AI software</span> that does{" "}
+            <span className="text-accent">real work</span> for your business.
+          </h1>
+        </Reveal>
+        <Reveal delay={160}>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+            Custom AI apps, agents, and automation. From first idea to
+            production, built by senior engineers and shipped in weeks.
+          </p>
+        </Reveal>
+        <Reveal delay={240}>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="/order"
+              className="btn-primary rounded-full bg-accent px-8 py-4 text-base font-medium text-bg hover:bg-accent-dim"
+            >
+              Start your project
+            </a>
+            <a
+              href="#work"
+              className="group inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm text-text transition-colors hover:border-accent-dim"
+            >
+              See our work
+              <span
+                aria-hidden
+                className="text-accent transition-transform duration-300 group-hover:translate-y-0.5"
               >
-                We build AI software that does real work for{" "}
-                <span className="text-accent">your business.</span>
-              </h1>
-            </Reveal>
-            <Reveal delay={160}>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-                Custom AI apps, agents, and automation. From first idea to
-                production, built by senior engineers and shipped in weeks.
-              </p>
-            </Reveal>
-            <Reveal delay={240}>
-              <div className="mt-10 flex flex-wrap items-center gap-4">
-                <a
-                  href="/order"
-                  className="btn-primary rounded-lg bg-accent px-7 py-3.5 text-base font-medium text-bg hover:bg-accent-dim"
-                >
-                  Start your project
-                </a>
-                <a
-                  href="#work"
-                  className="group inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-sm text-text transition-colors hover:border-accent-dim"
-                >
-                  See our work
-                  <span
-                    aria-hidden
-                    className="text-accent transition-transform duration-300 group-hover:translate-y-0.5"
-                  >
-                    ↓
-                  </span>
-                </a>
-              </div>
-            </Reveal>
-            <Reveal delay={320}>
-              <p className="mt-8 font-mono text-xs uppercase tracking-widest text-muted">
-                AI agents · custom apps · automation · web and mobile
-              </p>
-            </Reveal>
+                ↓
+              </span>
+            </a>
           </div>
+        </Reveal>
+        <Reveal delay={320}>
+          <p className="mt-8 font-mono text-xs uppercase tracking-widest text-muted">
+            AI agents · custom apps · automation · web and mobile
+          </p>
+        </Reveal>
 
-          <div aria-hidden className="lg:col-span-5">
-            <DashboardMockup />
-          </div>
+        <div aria-hidden className="mx-auto mt-16 max-w-3xl">
+          <DashboardMockup />
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const links = [
   { href: "#services", label: "Services" },
+  { href: "/#products", label: "Products" },
   { href: "#work", label: "Work" },
   { href: "#process", label: "Process" },
   { href: "#pricing", label: "Pricing" },
@@ -52,7 +53,7 @@ export default function Nav() {
           ))}
           <a
             href="/order"
-            className="btn-primary rounded-lg bg-accent px-4 py-2 text-sm font-medium text-bg hover:bg-accent-dim"
+            className="btn-primary rounded-full bg-accent px-5 py-2 text-sm font-medium text-bg hover:bg-accent-dim"
           >
             Start your project
           </a>
@@ -111,7 +112,7 @@ export default function Nav() {
             <a
               href="/order"
               onClick={() => setOpen(false)}
-              className="btn-primary mt-2 rounded-lg bg-accent px-4 py-2.5 text-center text-sm font-medium text-bg hover:bg-accent-dim"
+              className="btn-primary mt-2 rounded-full bg-accent px-5 py-2.5 text-center text-sm font-medium text-bg hover:bg-accent-dim"
             >
               Start your project
             </a>

@@ -272,7 +272,7 @@ export default function OrderForm() {
                 (step === 1 && !form.service) ||
                 (step === 2 && (!form.budget || !form.timeline))
               }
-              className="rounded-lg bg-accent px-6 py-2.5 text-sm font-medium text-bg transition-colors hover:bg-accent-dim disabled:cursor-not-allowed disabled:opacity-40"
+              className="btn-primary rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-bg hover:bg-accent-dim disabled:cursor-not-allowed disabled:opacity-40"
             >
               Continue
             </button>
@@ -281,7 +281,7 @@ export default function OrderForm() {
               type="button"
               onClick={handleSubmit}
               disabled={submitting}
-              className="rounded-lg bg-accent px-6 py-2.5 text-sm font-medium text-bg transition-colors hover:bg-accent-dim disabled:cursor-not-allowed disabled:opacity-40"
+              className="btn-primary rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-bg hover:bg-accent-dim disabled:cursor-not-allowed disabled:opacity-40"
             >
               {submitting ? "Sending…" : "Send project details"}
             </button>

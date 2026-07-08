@@ -60,8 +60,15 @@ export default function Process() {
     <section
       id="process"
       aria-labelledby="process-heading"
-      className="section border-t border-border"
+      className="section relative overflow-hidden border-t border-border"
     >
+      <div
+        aria-hidden
+        className="glow -bottom-40 -right-40 h-[600px] w-[600px] opacity-[0.10]"
+        style={{
+          background: "radial-gradient(closest-side, #FFC24B, transparent)",
+        }}
+      />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <span className="eyebrow">How we work</span>

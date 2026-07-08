@@ -140,7 +140,7 @@ export default async function BlogPostPage({
             </p>
             <a
               href="/order"
-              className="btn-primary mt-5 inline-block rounded-lg bg-accent px-6 py-3 text-sm font-medium text-bg hover:bg-accent-dim"
+              className="btn-primary mt-5 inline-block rounded-full bg-accent px-8 py-4 text-sm font-medium text-bg hover:bg-accent-dim"
             >
               Start your project
             </a>

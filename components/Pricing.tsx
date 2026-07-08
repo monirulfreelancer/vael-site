@@ -109,7 +109,7 @@ export default function Pricing() {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-40 -z-10 h-[440px] w-[760px] -translate-x-1/2 opacity-[0.06] blur-3xl"
+        className="glow left-1/2 top-40 h-[880px] w-[1400px] -translate-x-1/2 opacity-[0.14]"
         style={{
           background: "radial-gradient(closest-side, #FFC24B, transparent)",
         }}
@@ -199,7 +199,7 @@ export default function Pricing() {
 
               <a
                 href="/order"
-                className={`mt-5 rounded-lg px-4 py-2.5 text-center font-medium ${
+                className={`mt-5 rounded-full px-4 py-2.5 text-center font-medium ${
                   tier.popular
                     ? "btn-primary bg-accent text-bg hover:bg-accent-dim"
                     : "border border-border transition-colors hover:border-accent-dim"

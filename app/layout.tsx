@@ -75,6 +75,13 @@ const orgJsonLd = {
     "MVP development",
     "custom software development",
   ],
+  owns: [
+    { "@type": "Product", name: "FridayLead", url: "https://fridaylead.com" },
+    { "@type": "Product", name: "ContentFlow", url: "https://topanglelead.com" },
+    { "@type": "Product", name: "mailverify", url: "https://goanglelead.com" },
+    { "@type": "Product", name: "AutoZoom", url: "https://autozoom.app" },
+    { "@type": "Product", name: "AngleDesk", url: "https://angleleadteam.com" },
+  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Engagement models",

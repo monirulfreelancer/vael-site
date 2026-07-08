@@ -13,7 +13,7 @@ export default async function CaseStudies() {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 -top-24 -z-10 h-[420px] w-[420px] rounded-full opacity-[0.06] blur-3xl"
+        className="glow -right-48 -top-48 h-[840px] w-[840px] opacity-[0.14]"
         style={{
           background: "radial-gradient(closest-side, #FFC24B, transparent)",
         }}

@@ -51,8 +51,15 @@ export default function FAQ() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="section border-t border-border"
+      className="section relative overflow-hidden border-t border-border"
     >
+      <div
+        aria-hidden
+        className="glow -bottom-56 left-1/2 h-[500px] w-[900px] -translate-x-1/2 opacity-[0.10]"
+        style={{
+          background: "radial-gradient(closest-side, #FFC24B, transparent)",
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

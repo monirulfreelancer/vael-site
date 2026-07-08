@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Reveal from "./Reveal";
 
 const testimonials = [
@@ -25,13 +28,22 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  const [featured, ...rest] = testimonials;
+  const [index, setIndex] = useState(0);
+  const t = testimonials[index];
+  const count = testimonials.length;
 
   return (
     <section
       aria-labelledby="testimonials-heading"
-      className="section border-t border-border"
+      className="section relative overflow-hidden border-t border-border"
     >
+      <div
+        aria-hidden
+        className="glow -top-40 left-1/2 h-[500px] w-[900px] -translate-x-1/2 opacity-[0.10]"
+        style={{
+          background: "radial-gradient(closest-side, #FFC24B, transparent)",
+        }}
+      />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <span className="eyebrow">What clients say</span>
@@ -43,55 +55,68 @@ export default function Testimonials() {
           </h2>
         </Reveal>
 
-        <Reveal>
-          <figure className="mt-16 rounded-2xl border border-border bg-surface p-10 sm:mt-20 sm:p-14">
-            <div
-              aria-hidden
-              className="font-display text-6xl leading-none text-accent"
+        <Reveal delay={120}>
+          <div className="mt-16 sm:mt-20">
+            <figure
+              key={index}
+              aria-label={`${t.rating} out of 5 stars`}
+              className="fade-in mx-auto max-w-3xl rounded-2xl border border-border bg-surface p-10 text-center sm:p-16"
             >
-              &ldquo;
-            </div>
-            <blockquote className="mt-4 text-2xl leading-snug text-text sm:text-3xl">
-              {featured.quote}
-            </blockquote>
-            <figcaption className="mt-8 flex flex-wrap items-center justify-between gap-4">
-              <div>
-                <div className="font-medium">{featured.author}</div>
-                <div className="font-mono text-xs text-muted">
-                  {featured.role}
-                </div>
+              <div aria-hidden className="text-sm text-accent">
+                {"★".repeat(t.rating)}
               </div>
               <div
-                className="text-sm text-accent"
-                aria-label={`${featured.rating} out of 5 stars`}
+                aria-hidden
+                className="mt-4 font-display text-6xl leading-none text-accent"
               >
-                <span aria-hidden>{"★".repeat(featured.rating)}</span>
+                &ldquo;
               </div>
-            </figcaption>
-          </figure>
-        </Reveal>
-
-        <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
-          {rest.map((t, i) => (
-            <Reveal key={t.author} delay={i * 80}>
-              <figure className="card flex h-full flex-col p-7">
-                <div
-                  className="mb-4 text-sm text-accent"
-                  aria-label={`${t.rating} out of 5 stars`}
-                >
-                  <span aria-hidden>{"★".repeat(t.rating)}</span>
+              <blockquote className="mt-2 text-2xl leading-snug sm:text-3xl">
+                {t.quote}
+              </blockquote>
+              <figcaption className="mt-8">
+                <div className="font-medium">{t.author}</div>
+                <div className="mt-1 font-mono text-xs text-muted">
+                  {t.role}
                 </div>
-                <blockquote className="flex-1 leading-relaxed text-text/90">
-                  &ldquo;{t.quote}&rdquo;
-                </blockquote>
-                <figcaption className="mt-6">
-                  <div className="font-medium">{t.author}</div>
-                  <div className="font-mono text-xs text-muted">{t.role}</div>
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
+              </figcaption>
+            </figure>
+
+            <div className="mt-8 flex items-center justify-center gap-6">
+              <button
+                type="button"
+                onClick={() => setIndex((index + count - 1) % count)}
+                aria-label="Previous testimonial"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-accent hover:text-text"
+              >
+                <span aria-hidden>←</span>
+              </button>
+
+              <div className="flex items-center gap-2">
+                {testimonials.map((item, i) => (
+                  <button
+                    key={item.author}
+                    type="button"
+                    onClick={() => setIndex(i)}
+                    aria-label={`Go to testimonial ${i + 1}`}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      i === index ? "w-6 bg-accent" : "w-1.5 bg-muted/40"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIndex((index + 1) % count)}
+                aria-label="Next testimonial"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-accent hover:text-text"
+              >
+                <span aria-hidden>→</span>
+              </button>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
