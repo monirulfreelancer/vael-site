@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BlogCard from "@/components/BlogCard";
+import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import Reveal from "@/components/Reveal";
 import { getAllPosts } from "@/lib/blog";
@@ -38,6 +39,7 @@ export default function BlogPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

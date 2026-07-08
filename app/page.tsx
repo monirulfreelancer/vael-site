@@ -2,6 +2,7 @@ import About from "@/components/About";
 import CaseStudies from "@/components/CaseStudies";
 import ClientLogos from "@/components/ClientLogos";
 import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
 import Pricing from "@/components/Pricing";
@@ -24,6 +25,7 @@ export default function Home() {
         <About />
         <FAQ />
       </main>
+      <Footer />
     </>
   );
 }

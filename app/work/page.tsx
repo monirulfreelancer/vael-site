@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CaseStudyCard from "@/components/CaseStudyCard";
+import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import Reveal from "@/components/Reveal";
 import { getAllCaseStudies } from "@/lib/caseStudies";
@@ -34,6 +35,7 @@ export default function WorkPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import { getAllCaseStudies, getCaseStudy } from "@/lib/caseStudies";
 
@@ -112,6 +113,7 @@ export default async function CaseStudyPage({
           </div>
         </article>
       </main>
+      <Footer />
     </>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import BlogCard from "@/components/BlogCard";
+import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import { formatDate, getAllPosts, getPost } from "@/lib/blog";
 import { SITE } from "@/lib/site";
@@ -126,6 +127,7 @@ export default async function BlogPostPage({
           </div>
         )}
       </main>
+      <Footer />
     </>
   );
 }
