@@ -2,14 +2,18 @@ import fs from "fs";
 import path from "path";
 import bcrypt from "bcryptjs";
 import matter from "gray-matter";
-import { Prisma, PrismaClient } from "@prisma/client";
+import prismaPkg from "@prisma/client";
+
+// @prisma/client ships CommonJS; destructure from the default import so this
+// resolves cleanly as an ES module in the runner container.
+const { Prisma, PrismaClient } = prismaPkg;
 
 const db = new PrismaClient();
 
 const CASE_STUDIES_DIR = path.join(process.cwd(), "content", "case-studies");
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
-function readMdx(dir: string) {
+function readMdx(dir) {
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
@@ -38,7 +42,7 @@ async function seedPosts() {
         title: data.title,
         description: data.description,
         body: content,
-        tags: (data.tags ?? []) as string[],
+        tags: data.tags ?? [],
         author: data.author ?? "Vael",
         published: data.published ?? false,
         publishedAt: data.date ? new Date(data.date) : null,
@@ -67,11 +71,11 @@ async function seedCaseStudies() {
         client: data.client,
         year: data.year,
         duration: data.duration,
-        services: (data.services ?? []) as string[],
+        services: data.services ?? [],
         thumbnail: data.thumbnail,
         featured: data.featured ?? false,
         body: content,
-        metrics: (data.metrics ?? []) as Prisma.InputJsonValue,
+        metrics: data.metrics ?? [],
         testimonial: data.testimonial ?? Prisma.JsonNull,
         published: data.published ?? true,
       },
@@ -87,9 +91,7 @@ async function seedAdminUser() {
   const password = process.env.ADMIN_PASSWORD;
 
   if (!email || !password) {
-    console.log(
-      "Admin user: ADMIN_EMAIL / ADMIN_PASSWORD not set, skipping."
-    );
+    console.log("Admin user: ADMIN_EMAIL / ADMIN_PASSWORD not set, skipping.");
     return;
   }
 

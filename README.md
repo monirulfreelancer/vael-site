@@ -61,17 +61,33 @@ npx prisma db seed
 pages read from the database via ISR (`revalidate = 60`), so new or edited
 content appears within a minute without a redeploy.
 
-### Migrations in production (Coolify)
+### First-run migration and seeding (production)
 
-The image runs migrations with `npx prisma migrate deploy`, which applies any
-pending migrations without generating new ones. Add it to the container start
-command so the schema is up to date before the server boots, for example:
+The production database is only reachable from inside the Docker network, so the
+container migrates and seeds itself on start. `scripts/start.sh` (the image's
+entrypoint) runs, in order:
 
-```
-npx prisma migrate deploy && node server.js
-```
+1. `npx prisma migrate deploy` — applies any pending migrations. It never
+   generates new ones, so it is safe to run on every boot.
+2. `node scripts/seed.mjs` — seeds content **only into empty tables**. If the
+   `Post` or `CaseStudy` table already has rows, that table is skipped, so a
+   restart never overwrites posts edited in the admin panel. The step is
+   wrapped so a seed failure does not stop the server from starting.
+3. `node server.js` — starts Next.js.
 
-The Prisma schema is copied into the runtime image so this command can run.
+The admin user is (re)checked on every boot: if `ADMIN_EMAIL` and
+`ADMIN_PASSWORD` are set and no user with that email exists, one is created.
+Once it exists, the seed never touches its password, so those vars only matter
+on the first boot. To rotate the password later, change it from the admin panel
+or update the row directly, not by changing the env vars.
+
+Because the schema, migrations, MDX seed source, and the Prisma CLI are all
+copied into the runtime image, no manual database step is needed on deploy. To
+re-import the original MDX content, empty the relevant table first, then restart
+the container.
+
+The `prisma db seed` command (which uses `tsx prisma/seed.ts`) is the equivalent
+for local development.
 
 ## SEO and AEO assets
 

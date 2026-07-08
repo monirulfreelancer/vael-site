@@ -29,23 +29,44 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME=0.0.0.0
+ENV HOME=/home/nextjs
+# Keep the Prisma CLI from trying to write telemetry/update checks to HOME.
+ENV CHECKPOINT_DISABLE=1
+ENV PRISMA_HIDE_UPDATE_MESSAGE=1
 
 RUN addgroup --system --gid 1001 nodejs \
-  && adduser --system --uid 1001 nextjs
+  && adduser --system --uid 1001 --home /home/nextjs nextjs
 
-COPY --from=builder /app/public ./public
+# The Next.js standalone bundle only traces what the server imports. The
+# start-up migrate + seed step needs the Prisma CLI and the libraries the seed
+# reads, which are not in that bundle. Install just those into a clean /app.
+# Pin the CLI to the same version as @prisma/client (see package-lock) so
+# migrate deploy does not warn about a CLI/client version mismatch.
+RUN npm install --omit=dev --no-save prisma@6.19.3 gray-matter bcryptjs \
+  && npm cache clean --force
+
+# Application: standalone server, static assets, and public files.
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# The generated Prisma client and its query engine are not fully traced into
-# the Next.js standalone output, so copy them in explicitly. The schema is
-# copied too so `npx prisma migrate deploy` can run from the container.
-COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
-COPY --from=builder /app/node_modules/@prisma/client ./node_modules/@prisma/client
+# Generated Prisma client + query engine (not fully traced into standalone).
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules/.prisma ./node_modules/.prisma
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules/@prisma/client ./node_modules/@prisma/client
+
+# Schema + migrations (migrate deploy) and the MDX seed source.
 COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
+COPY --from=builder --chown=nextjs:nodejs /app/content ./content
+COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
+
+# ISR writes revalidated pages to .next/cache; make sure the app user can write
+# there and to its home, and can execute the start script.
+RUN mkdir -p .next/cache \
+  && chown -R nextjs:nodejs .next /home/nextjs \
+  && chmod +x scripts/start.sh
 
 USER nextjs
 
 EXPOSE 3000
 
-CMD ["node", "server.js"]
+CMD ["sh", "scripts/start.sh"]
