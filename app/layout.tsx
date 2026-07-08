@@ -5,6 +5,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://vael.studio"
+  ),
   title: "Vael — AI Software Development Agency",
   description:
     "Vael is an AI software development agency. We design, build, and ship AI-powered products.",

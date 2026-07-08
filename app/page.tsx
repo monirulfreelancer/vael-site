@@ -1,3 +1,4 @@
+import CaseStudies from "@/components/CaseStudies";
 import ClientLogos from "@/components/ClientLogos";
 import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
         <ClientLogos />
         <Services />
+        <CaseStudies />
       </main>
     </>
   );
