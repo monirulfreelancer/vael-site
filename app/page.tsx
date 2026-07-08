@@ -10,6 +10,8 @@ import Process from "@/components/Process";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 
+export const revalidate = 60;
+
 export default function Home() {
   return (
     <>

@@ -2,8 +2,8 @@ import { getFeaturedCaseStudies } from "@/lib/caseStudies";
 import CaseStudyCard from "./CaseStudyCard";
 import Reveal from "./Reveal";
 
-export default function CaseStudies() {
-  const studies = getFeaturedCaseStudies();
+export default async function CaseStudies() {
+  const studies = await getFeaturedCaseStudies();
 
   return (
     <section

@@ -6,8 +6,12 @@ import Nav from "@/components/Nav";
 import { getAllCaseStudies, getCaseStudy } from "@/lib/caseStudies";
 import { SITE } from "@/lib/site";
 
-export function generateStaticParams() {
-  return getAllCaseStudies().map((study) => ({ slug: study.slug }));
+export const revalidate = 60;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const studies = await getAllCaseStudies();
+  return studies.map((study) => ({ slug: study.slug }));
 }
 
 export async function generateMetadata({
@@ -16,7 +20,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const study = getCaseStudy(slug);
+  const study = await getCaseStudy(slug);
   if (!study) return {};
 
   const firstMetric = study.metrics[0];
@@ -44,7 +48,7 @@ export default async function CaseStudyPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const study = getCaseStudy(slug);
+  const study = await getCaseStudy(slug);
   if (!study) notFound();
 
   const breadcrumbJsonLd = {

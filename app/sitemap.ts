@@ -3,13 +3,18 @@ import { getAllPosts } from "@/lib/blog";
 import { getAllCaseStudies } from "@/lib/caseStudies";
 import { SITE } from "@/lib/site";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const studies: MetadataRoute.Sitemap = getAllCaseStudies().map((study) => ({
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [allStudies, allPosts] = await Promise.all([
+    getAllCaseStudies(),
+    getAllPosts(),
+  ]);
+
+  const studies: MetadataRoute.Sitemap = allStudies.map((study) => ({
     url: `${SITE.url}/work/${study.slug}`,
     priority: 0.7,
   }));
 
-  const posts: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
+  const posts: MetadataRoute.Sitemap = allPosts.map((post) => ({
     url: `${SITE.url}/blog/${post.slug}`,
     lastModified: new Date(post.date),
     priority: 0.7,

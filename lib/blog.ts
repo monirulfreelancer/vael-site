@@ -1,6 +1,4 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import { db } from "./db";
 
 export type PostMeta = {
   slug: string;
@@ -15,7 +13,17 @@ export type PostMeta = {
 
 export type Post = PostMeta & { content: string };
 
-const BLOG_DIR = path.join(process.cwd(), "content", "blog");
+type PostRow = {
+  slug: string;
+  title: string;
+  description: string;
+  tags: string[];
+  author: string;
+  published: boolean;
+  publishedAt: Date | null;
+  createdAt: Date;
+  body: string;
+};
 
 function computeReadingTime(content: string): string {
   const words = content.trim().split(/\s+/).filter(Boolean).length;
@@ -23,40 +31,49 @@ function computeReadingTime(content: string): string {
   return `${minutes} min read`;
 }
 
-function toMeta(
-  data: Record<string, unknown>,
-  content: string,
-  slug: string
-): PostMeta {
+// The DB stores publishedAt as a DateTime; the public types use a "YYYY-MM-DD"
+// string so formatDate stays timezone-safe. Fall back to createdAt if a
+// published post is missing publishedAt.
+function toDateString(row: PostRow): string {
+  const date = row.publishedAt ?? row.createdAt;
+  return date.toISOString().slice(0, 10);
+}
+
+function toMeta(row: PostRow): PostMeta {
   return {
-    ...data,
-    slug,
-    readingTime: (data.readingTime as string) ?? computeReadingTime(content),
-  } as PostMeta;
+    slug: row.slug,
+    title: row.title,
+    description: row.description,
+    date: toDateString(row),
+    tags: row.tags,
+    author: row.author,
+    readingTime: computeReadingTime(row.body),
+    published: row.published,
+  };
 }
 
-export function getAllPosts(): PostMeta[] {
-  if (!fs.existsSync(BLOG_DIR)) return [];
-
-  return fs
-    .readdirSync(BLOG_DIR)
-    .filter((file) => file.endsWith(".mdx"))
-    .map((file) => {
-      const raw = fs.readFileSync(path.join(BLOG_DIR, file), "utf8");
-      const { data, content } = matter(raw);
-      return toMeta(data, content, file.replace(/\.mdx$/, ""));
-    })
-    .filter((post) => post.published !== false)
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+export async function getAllPosts(): Promise<PostMeta[]> {
+  try {
+    const rows = await db.post.findMany({
+      where: { published: true },
+      orderBy: { publishedAt: "desc" },
+    });
+    return rows.map(toMeta);
+  } catch {
+    return [];
+  }
 }
 
-export function getPost(slug: string): Post | null {
-  const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
-  if (!fs.existsSync(filePath)) return null;
-
-  const raw = fs.readFileSync(filePath, "utf8");
-  const { data, content } = matter(raw);
-  return { ...toMeta(data, content, slug), content };
+export async function getPost(slug: string): Promise<Post | null> {
+  try {
+    const row = await db.post.findFirst({
+      where: { slug, published: true },
+    });
+    if (!row) return null;
+    return { ...toMeta(row), content: row.body };
+  } catch {
+    return null;
+  }
 }
 
 const MONTHS = [
@@ -71,9 +88,9 @@ export function formatDate(iso: string): string {
   return `${MONTHS[month - 1]} ${day}, ${year}`;
 }
 
-export function getAllTags(): string[] {
+export async function getAllTags(): Promise<string[]> {
   const tags = new Set<string>();
-  for (const post of getAllPosts()) {
+  for (const post of await getAllPosts()) {
     for (const tag of post.tags ?? []) tags.add(tag);
   }
   return Array.from(tags).sort();

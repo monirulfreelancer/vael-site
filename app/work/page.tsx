@@ -15,8 +15,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function WorkPage() {
-  const studies = getAllCaseStudies();
+export const revalidate = 60;
+
+export default async function WorkPage() {
+  const studies = await getAllCaseStudies();
 
   return (
     <>
