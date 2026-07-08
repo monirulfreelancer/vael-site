@@ -18,6 +18,11 @@ ENV NEXT_TELEMETRY_DISABLED=1
 # fills content in at runtime. Coolify can override this with a build arg.
 ARG DATABASE_URL="postgresql://user:password@localhost:5432/vael?schema=public"
 ENV DATABASE_URL=$DATABASE_URL
+# lib/auth throws at import if AUTH_SECRET is missing, and the admin routes are
+# imported during the build. A placeholder is enough to compile; the real
+# secret is supplied at runtime.
+ARG AUTH_SECRET="build-time-placeholder-secret"
+ENV AUTH_SECRET=$AUTH_SECRET
 RUN npx prisma generate
 RUN npm run build
 
