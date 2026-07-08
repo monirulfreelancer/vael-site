@@ -12,6 +12,9 @@
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk Variable", "Inter Variable", sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+  /* text-base matches the 17px body size so adding the class to a
+     previously unsized paragraph never shrinks it. */
+  --text-base: 1.0625rem;
 }
 
 :root {
@@ -38,6 +41,7 @@ body {
   background-attachment: fixed;
   color: var(--color-text);
   font-family: var(--font-sans);
+  font-size: 1.0625rem;
   letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
 }
@@ -63,7 +67,7 @@ h3 {
     align-items: center;
     gap: 0.75rem;
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--color-accent);
@@ -129,6 +133,11 @@ h3 {
   /* One-shot fade used by the testimonial carousel when the slide changes. */
   .fade-in {
     animation: fade-in 0.3s ease;
+  }
+
+  /* Gentle vertical bob for the hero scroll cue. */
+  .bob {
+    animation: bob 2s ease-in-out infinite;
   }
 
   /* Amber CTA lift + glow. Buttons that use this drop `transition-colors` so
@@ -213,13 +222,13 @@ h3 {
   }
 
   .prose-vael {
-    font-size: 1.0625rem;
+    font-size: 1.125rem;
     line-height: 1.75;
     color: #d6d6d2;
   }
 
   .prose-vael h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 600;
     color: var(--color-text);
     margin: 2.5rem 0 0.75rem;
@@ -274,6 +283,16 @@ h3 {
   }
 }
 
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
 ::selection {
   background: var(--color-accent);
   color: var(--color-bg);
@@ -320,6 +339,10 @@ h3 {
   }
 
   .marquee {
+    animation: none;
+  }
+
+  .bob {
     animation: none;
   }
 }

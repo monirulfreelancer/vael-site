@@ -89,7 +89,7 @@ export default function About() {
                 </div>
                 <div>
                   <div className="font-semibold">{pillar.title}</div>
-                  <div className="mt-1 text-sm leading-relaxed text-muted">
+                  <div className="mt-1 text-base leading-relaxed text-muted">
                     {pillar.description}
                   </div>
                 </div>

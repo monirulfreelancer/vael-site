@@ -1,134 +1,14 @@
 import Reveal from "./Reveal";
 
-const stats = [
-  { value: "8", label: "Active" },
-  { value: "100%", label: "On-time" },
-  { value: "24", label: "Shipped" },
-];
-
-const pipeline = [
-  { name: "Booking platform", client: "Northwind", status: "Shipped", progress: 100 },
-  { name: "AI support agent", client: "Apex Labs", status: "In build", progress: 72 },
-  { name: "E-commerce app", client: "Brightly", status: "In build", progress: 48 },
-  { name: "Ops dashboard", client: "Vertex", status: "In review", progress: 90 },
-];
-
-const sidebarItems = ["Overview", "Projects", "Clients", "Builds", "Settings"];
-
-function DashboardMockup() {
-  return (
-    <div className="relative">
-      <div
-        aria-hidden
-        className="glow -inset-10 opacity-[0.16]"
-        style={{
-          background: "radial-gradient(closest-side, #FFC24B, transparent)",
-        }}
-      />
-      <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-[0_50px_120px_-24px_rgba(0,0,0,0.85)]">
-        <div className="flex items-center gap-2 border-b border-border bg-surface2 px-4 py-2.5">
-          <span className="h-2 w-2 rounded-full bg-muted/30" />
-          <span className="h-2 w-2 rounded-full bg-muted/30" />
-          <span className="h-2 w-2 rounded-full bg-muted/30" />
-          <span className="ml-2 font-mono text-[11px] text-muted">
-            app.vael.studio/dashboard
-          </span>
-        </div>
-
-        <div className="flex">
-          <aside className="hidden w-28 border-r border-border p-3 sm:block">
-            <div className="flex h-5 w-5 items-center justify-center rounded border border-accent font-mono text-[10px] text-accent">
-              V
-            </div>
-            <div className="mt-4 space-y-1">
-              {sidebarItems.map((item) => (
-                <div
-                  key={item}
-                  className={`rounded px-2 py-1 font-mono text-[10px] ${
-                    item === "Projects"
-                      ? "bg-accent/10 text-accent"
-                      : "text-muted"
-                  }`}
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          </aside>
-
-          <div className="flex-1 space-y-3 p-4">
-            <div className="grid grid-cols-3 gap-2">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-lg border border-border p-2"
-                >
-                  <div className="text-sm font-semibold text-accent">
-                    {stat.value}
-                  </div>
-                  <div className="font-mono text-[9px] text-muted">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="overflow-hidden rounded-lg border border-border">
-              <div className="flex items-center justify-between border-b border-border bg-surface2 px-3 py-1.5 font-mono text-[9px] tracking-[0.15em] text-muted">
-                <span>PROJECT</span>
-                <span>STATUS</span>
-              </div>
-              {pipeline.map((project, i) => (
-                <div
-                  key={project.name}
-                  className={`px-3 py-2 ${
-                    i < pipeline.length - 1 ? "border-b border-border" : ""
-                  }`}
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <div>
-                      <div className="text-[10px] text-text">
-                        {project.name}
-                      </div>
-                      <div className="font-mono text-[9px] text-muted">
-                        {project.client}
-                      </div>
-                    </div>
-                    <div
-                      className={`font-mono text-[9px] ${
-                        project.status === "Shipped"
-                          ? "text-accent"
-                          : "text-muted"
-                      }`}
-                    >
-                      {project.status}
-                    </div>
-                  </div>
-                  <div className="mt-1.5 h-px overflow-hidden rounded-full bg-border">
-                    <div
-                      className="h-full rounded-full bg-accent"
-                      style={{ width: `${project.progress}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function Hero() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative overflow-hidden pb-20 pt-32 sm:pb-28 sm:pt-40"
+      className="relative overflow-hidden pb-24 pt-32 md:pb-32 md:pt-40"
     >
       <div
         aria-hidden
-        className="glow left-1/2 top-0 h-[620px] w-[1000px] -translate-x-1/2 -translate-y-1/4 opacity-[0.22]"
+        className="glow left-1/2 top-0 h-[680px] w-[1200px] -translate-x-1/2 -translate-y-1/4 opacity-[0.26]"
         style={{
           background: "radial-gradient(closest-side, #FFC24B, transparent)",
         }}
@@ -158,7 +38,7 @@ export default function Hero() {
           </h1>
         </Reveal>
         <Reveal delay={160}>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+          <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-muted sm:text-2xl">
             Custom AI apps, agents, and automation. From first idea to
             production, built by senior engineers and shipped in weeks.
           </p>
@@ -190,10 +70,16 @@ export default function Hero() {
             AI agents · custom apps · automation · web and mobile
           </p>
         </Reveal>
-
-        <div aria-hidden className="mx-auto mt-16 max-w-3xl">
-          <DashboardMockup />
-        </div>
+        <Reveal delay={400}>
+          <div className="mt-14">
+            <p className="font-mono text-xs text-muted">
+              Scroll to see our work
+            </p>
+            <div aria-hidden className="bob mt-2 text-accent">
+              ↓
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

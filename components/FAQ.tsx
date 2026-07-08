@@ -81,7 +81,7 @@ export default function FAQ() {
               key={faq.question}
               className="group overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-accent/40"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between p-6 font-medium [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between p-6 text-lg font-medium [&::-webkit-details-marker]:hidden">
                 <span>{faq.question}</span>
                 <span
                   aria-hidden
@@ -90,7 +90,7 @@ export default function FAQ() {
                   +
                 </span>
               </summary>
-              <div className="px-6 pb-6 leading-relaxed text-muted">
+              <div className="px-6 pb-6 text-base leading-relaxed text-muted">
                 {faq.answer}
               </div>
             </details>

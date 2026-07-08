@@ -75,8 +75,8 @@ export default function Testimonials() {
                 {t.quote}
               </blockquote>
               <figcaption className="mt-8">
-                <div className="font-medium">{t.author}</div>
-                <div className="mt-1 font-mono text-xs text-muted">
+                <div className="text-lg font-medium">{t.author}</div>
+                <div className="mt-1 font-mono text-sm text-muted">
                   {t.role}
                 </div>
               </figcaption>

@@ -67,7 +67,7 @@ export default function Products() {
             >
               We do not just build software. We run it.
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg text-muted">
+            <p className="mx-auto mt-6 max-w-xl text-xl leading-relaxed text-muted">
               Five products we designed, built, and operate ourselves. The same
               team builds yours.
             </p>
@@ -86,11 +86,11 @@ export default function Products() {
                 <div aria-hidden className="text-2xl text-accent">
                   {product.glyph}
                 </div>
-                <h3 className="mt-5 text-xl font-semibold">{product.name}</h3>
+                <h3 className="mt-5 text-2xl font-semibold">{product.name}</h3>
                 <p className="mt-1 font-mono text-xs text-muted">
                   {product.category}
                 </p>
-                <p className="mt-3 leading-relaxed text-muted">
+                <p className="mt-3 text-base leading-relaxed text-muted">
                   {product.description}
                 </p>
                 <p className="mt-5 font-mono text-xs text-accent">
@@ -108,8 +108,8 @@ export default function Products() {
               <div aria-hidden className="text-2xl text-accent">
                 →
               </div>
-              <h3 className="mt-5 text-xl font-semibold">And yours next.</h3>
-              <p className="mt-3 leading-relaxed text-muted">
+              <h3 className="mt-5 text-2xl font-semibold">And yours next.</h3>
+              <p className="mt-3 text-base leading-relaxed text-muted">
                 Every product here started as a scoped six week build. So can
                 yours.
               </p>

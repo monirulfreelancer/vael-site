@@ -67,11 +67,11 @@ export default function Services() {
                 <div aria-hidden className="mb-5 text-2xl text-accent">
                   {service.glyph}
                 </div>
-                <h3 className="text-xl font-semibold">{service.name}</h3>
+                <h3 className="text-2xl font-semibold">{service.name}</h3>
                 <p className="mt-1.5 font-medium text-text/90">
                   {service.promise}
                 </p>
-                <p className="mt-3 leading-relaxed text-muted">
+                <p className="mt-3 text-base leading-relaxed text-muted">
                   {service.description}
                 </p>
                 <p className="mt-5 font-mono text-xs text-muted">

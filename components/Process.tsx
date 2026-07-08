@@ -93,8 +93,8 @@ export default function Process() {
                   </span>
                 </div>
 
-                <h3 className="mt-5 text-lg font-semibold">{phase.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
+                <h3 className="mt-5 text-xl font-semibold">{phase.name}</h3>
+                <p className="mt-2 text-base leading-relaxed text-muted">
                   {phase.description}
                 </p>
 
@@ -102,7 +102,7 @@ export default function Process() {
                   {phase.bullets.map((bullet) => (
                     <li
                       key={bullet}
-                      className="relative pl-4 text-sm text-muted"
+                      className="relative pl-4 text-base leading-relaxed text-muted"
                     >
                       <span aria-hidden className="absolute left-0 text-accent">
                         ·
@@ -112,7 +112,7 @@ export default function Process() {
                   ))}
                 </ul>
 
-                <p className="mt-5 font-mono text-[11px] leading-relaxed text-muted">
+                <p className="mt-5 font-mono text-xs leading-relaxed text-muted">
                   <span className="text-accent">Deliverables:</span>{" "}
                   {phase.deliverables}
                 </p>
@@ -122,7 +122,7 @@ export default function Process() {
         </div>
 
         <Reveal>
-          <p className="mt-8 text-sm text-muted">
+          <p className="mt-8 text-base leading-relaxed text-muted">
             Typical MVP runs six weeks. Larger builds run eight to twelve. Every
             timeline is fixed and agreed before we start.
           </p>

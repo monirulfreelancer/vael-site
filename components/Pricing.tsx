@@ -123,7 +123,7 @@ export default function Pricing() {
           >
             Transparent pricing, scoped to your project.
           </h2>
-          <p className="mt-4 max-w-xl text-lg text-muted">
+          <p className="mt-4 max-w-xl text-xl leading-relaxed text-muted">
             No hourly billing surprises.
           </p>
         </Reveal>
@@ -169,7 +169,7 @@ export default function Pricing() {
                 </span>
               )}
 
-              <h3 className="text-lg font-semibold">{tier.name}</h3>
+              <h3 className="text-xl font-semibold">{tier.name}</h3>
               <p className="mt-1 font-mono text-xs text-muted">
                 {tier.subtitle}
               </p>
@@ -183,7 +183,7 @@ export default function Pricing() {
                 {tier.features.map((feature) => (
                   <li
                     key={feature}
-                    className="relative pl-5 text-sm text-muted"
+                    className="relative pl-5 text-base leading-relaxed text-muted"
                   >
                     <span aria-hidden className="absolute left-0 text-accent">
                       ✓
@@ -193,7 +193,7 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <p className="mt-6 font-mono text-[11px] text-muted">
+              <p className="mt-6 font-mono text-xs text-muted">
                 <span className="text-accent">Best for:</span> {tier.bestFor}
               </p>
 

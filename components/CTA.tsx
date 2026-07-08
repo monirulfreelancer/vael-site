@@ -31,7 +31,7 @@ export default function CTA() {
           >
             Your project could ship in six weeks.
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-muted">
+          <p className="mx-auto mt-6 max-w-xl text-xl leading-relaxed text-muted">
             Tell us what you are building. We will come back within one
             business day with a fixed scope, a fixed price, and a start date.
           </p>

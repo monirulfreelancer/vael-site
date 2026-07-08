@@ -31,7 +31,7 @@ export default function Footer() {
               </span>
               <span className="font-display text-lg font-semibold">Vael</span>
             </a>
-            <p className="mt-4 text-sm leading-relaxed text-muted">
+            <p className="mt-4 text-base leading-relaxed text-muted">
               We build AI software that does real work. Senior engineering,
               AI-accelerated delivery.
             </p>
