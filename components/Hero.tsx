@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative overflow-hidden pb-24 pt-32 md:pb-32 md:pt-40"
+      className="relative overflow-hidden pb-12 pt-32 md:pb-16 md:pt-40"
     >
       <div
         aria-hidden
@@ -66,19 +66,9 @@ export default function Hero() {
           </div>
         </Reveal>
         <Reveal delay={320}>
-          <p className="mt-8 font-mono text-xs uppercase tracking-widest text-muted">
+          <p className="mt-10 font-mono text-sm tracking-[0.08em] text-muted">
             AI agents · custom apps · automation · web and mobile
           </p>
-        </Reveal>
-        <Reveal delay={400}>
-          <div className="mt-14">
-            <p className="font-mono text-xs text-muted">
-              Scroll to see our work
-            </p>
-            <div aria-hidden className="bob mt-2 text-accent">
-              ↓
-            </div>
-          </div>
         </Reveal>
       </div>
     </section>

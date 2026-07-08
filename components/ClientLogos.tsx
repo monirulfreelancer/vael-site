@@ -20,7 +20,7 @@ export default function ClientLogos() {
   return (
     <section
       aria-labelledby="clients-heading"
-      className="border-t border-border py-12"
+      className="border-t border-border pb-14 pt-8"
       style={{
         background:
           "linear-gradient(180deg, rgba(255,194,75,0.015), transparent 40%)",

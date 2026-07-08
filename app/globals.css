@@ -135,11 +135,6 @@ h3 {
     animation: fade-in 0.3s ease;
   }
 
-  /* Gentle vertical bob for the hero scroll cue. */
-  .bob {
-    animation: bob 2s ease-in-out infinite;
-  }
-
   /* Amber CTA lift + glow. Buttons that use this drop `transition-colors` so
      this transition owns transform, shadow, and background together. */
   .btn-primary {
@@ -283,16 +278,6 @@ h3 {
   }
 }
 
-@keyframes bob {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(4px);
-  }
-}
-
 ::selection {
   background: var(--color-accent);
   color: var(--color-bg);
@@ -339,10 +324,6 @@ h3 {
   }
 
   .marquee {
-    animation: none;
-  }
-
-  .bob {
     animation: none;
   }
 }
