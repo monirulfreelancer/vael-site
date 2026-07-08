@@ -4,6 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import BlogCard from "@/components/BlogCard";
 import Nav from "@/components/Nav";
 import { formatDate, getAllPosts, getPost } from "@/lib/blog";
+import { SITE } from "@/lib/site";
 
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -61,7 +62,7 @@ export default async function BlogPostPage({
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://vael.studio/blog/${post.slug}`,
+      "@id": `${SITE.url}/blog/${post.slug}`,
     },
   };
 
