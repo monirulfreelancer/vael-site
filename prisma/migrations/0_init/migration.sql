@@ -1,4 +1,4 @@
-﻿-- CreateSchema
+-- CreateSchema
 CREATE SCHEMA IF NOT EXISTS "public";
 
 -- CreateTable
@@ -65,4 +65,3 @@ CREATE UNIQUE INDEX "CaseStudy_slug_key" ON "CaseStudy"("slug");
 
 -- CreateIndex
 CREATE INDEX "CaseStudy_published_year_idx" ON "CaseStudy"("published", "year");
-

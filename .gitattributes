@@ -1,3 +1,8 @@
 # Shell scripts must use LF line endings so they run correctly in the Linux
 # container. A CRLF here would break the #!/bin/sh shebang.
 *.sh text eol=lf
+
+# SQL and TOML must be stored as plain UTF-8 with LF and no BOM. A leading BOM
+# in a Prisma migration makes PostgreSQL fail with a 42601 syntax error.
+*.sql text eol=lf
+*.toml text eol=lf
