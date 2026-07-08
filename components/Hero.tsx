@@ -122,7 +122,10 @@ function DashboardMockup() {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pb-20 pt-32 sm:pb-28 sm:pt-40">
+    <section
+      aria-labelledby="hero-heading"
+      className="relative overflow-hidden pb-20 pt-32 sm:pb-28 sm:pt-40"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[620px] w-[820px] -translate-x-1/2 -translate-y-1/4 opacity-[0.16] blur-3xl"
@@ -138,7 +141,10 @@ export default function Hero() {
               <span className="eyebrow">AI SOFTWARE DEVELOPMENT AGENCY</span>
             </Reveal>
             <Reveal delay={80}>
-              <h1 className="h-display mt-6 text-4xl font-semibold sm:text-5xl lg:text-[3.75rem]">
+              <h1
+                id="hero-heading"
+                className="h-display mt-6 text-4xl font-semibold sm:text-5xl lg:text-[3.75rem]"
+              >
                 We build AI software that does real work for{" "}
                 <span className="text-accent">your business.</span>
               </h1>
@@ -172,7 +178,7 @@ export default function Hero() {
             </Reveal>
           </div>
 
-          <div className="lg:col-span-5">
+          <div aria-hidden className="lg:col-span-5">
             <DashboardMockup />
           </div>
         </div>

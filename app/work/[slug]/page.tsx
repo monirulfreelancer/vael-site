@@ -4,6 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import { getAllCaseStudies, getCaseStudy } from "@/lib/caseStudies";
+import { SITE } from "@/lib/site";
 
 export function generateStaticParams() {
   return getAllCaseStudies().map((study) => ({ slug: study.slug }));
@@ -26,6 +27,9 @@ export async function generateMetadata({
   return {
     title: study.title,
     description,
+    alternates: {
+      canonical: `${SITE.url}/work/${slug}`,
+    },
     openGraph: {
       title: study.title,
       description,
@@ -43,8 +47,32 @@ export default async function CaseStudyPage({
   const study = getCaseStudy(slug);
   if (!study) notFound();
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Work",
+        item: `${SITE.url}/work`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: study.title,
+        item: `${SITE.url}/work/${slug}`,
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Nav />
       <main className="pb-24 pt-28">
         <article className="mx-auto max-w-3xl px-5 sm:px-8">
@@ -89,8 +117,13 @@ export default async function CaseStudyPage({
           {study.testimonial && (
             <figure className="mt-12 rounded-2xl border border-accent/30 bg-surface p-8">
               {study.testimonial.rating && (
-                <div className="text-sm text-accent">
-                  {"★".repeat(study.testimonial.rating)}
+                <div
+                  className="text-sm text-accent"
+                  aria-label={`${study.testimonial.rating} out of 5 stars`}
+                >
+                  <span aria-hidden>
+                    {"★".repeat(study.testimonial.rating)}
+                  </span>
                 </div>
               )}
               <blockquote className="mt-3 text-lg leading-relaxed">

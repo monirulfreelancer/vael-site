@@ -4,11 +4,15 @@ import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import Reveal from "@/components/Reveal";
 import { getAllCaseStudies } from "@/lib/caseStudies";
+import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Our work",
   description:
     "Case studies from Vael. AI apps, agents, and automation built for real businesses, with measurable results.",
+  alternates: {
+    canonical: `${SITE.url}/work`,
+  },
 };
 
 export default function WorkPage() {
@@ -26,6 +30,7 @@ export default function WorkPage() {
             </h1>
           </Reveal>
 
+          <h2 className="sr-only">All case studies</h2>
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
             {studies.map((study, i) => (
               <Reveal key={study.slug} delay={i * 80}>

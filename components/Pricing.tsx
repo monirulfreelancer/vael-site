@@ -102,11 +102,18 @@ export default function Pricing() {
   const tiers = mode === "project" ? projectTiers : retainerTiers;
 
   return (
-    <section id="pricing" className="border-t border-border py-24">
+    <section
+      id="pricing"
+      aria-labelledby="pricing-heading"
+      className="border-t border-border py-24"
+    >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <span className="eyebrow">Engagement models</span>
-          <h2 className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl">
+          <h2
+            id="pricing-heading"
+            className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl"
+          >
             Transparent pricing, scoped to your project.
           </h2>
           <p className="mt-4 text-muted">No hourly billing surprises.</p>
@@ -161,7 +168,9 @@ export default function Pricing() {
                     key={feature}
                     className="relative pl-5 text-sm text-muted"
                   >
-                    <span className="absolute left-0 text-accent">✓</span>
+                    <span aria-hidden className="absolute left-0 text-accent">
+                      ✓
+                    </span>
                     {feature}
                   </li>
                 ))}

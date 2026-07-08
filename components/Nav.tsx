@@ -31,7 +31,10 @@ export default function Nav() {
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <a href="/" className="flex items-center gap-2.5">
-          <span className="flex h-7 w-7 items-center justify-center rounded-md border border-accent font-mono text-sm text-accent">
+          <span
+            aria-hidden
+            className="flex h-7 w-7 items-center justify-center rounded-md border border-accent font-mono text-sm text-accent"
+          >
             V
           </span>
           <span className="font-display text-lg font-semibold">Vael</span>
@@ -60,6 +63,7 @@ export default function Nav() {
           onClick={() => setOpen(!open)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
+          aria-controls="mobile-menu"
           className="flex h-9 w-9 items-center justify-center rounded-md text-text md:hidden"
         >
           <svg
@@ -89,7 +93,10 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div className="border-b border-border bg-bg/95 backdrop-blur md:hidden">
+        <div
+          id="mobile-menu"
+          className="border-b border-border bg-bg/95 backdrop-blur md:hidden"
+        >
           <div className="mx-auto flex max-w-6xl flex-col gap-1 px-5 pb-5 pt-2 sm:px-8">
             {links.map((link) => (
               <a

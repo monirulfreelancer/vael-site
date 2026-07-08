@@ -57,11 +57,18 @@ const phases = [
 
 export default function Process() {
   return (
-    <section id="process" className="border-t border-border py-24">
+    <section
+      id="process"
+      aria-labelledby="process-heading"
+      className="border-t border-border py-24"
+    >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <span className="eyebrow">How we work</span>
-          <h2 className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl">
+          <h2
+            id="process-heading"
+            className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl"
+          >
             A clear path from idea to launch. No surprises, no black box.
           </h2>
         </Reveal>
@@ -90,7 +97,9 @@ export default function Process() {
                       key={bullet}
                       className="relative pl-4 text-sm text-muted"
                     >
-                      <span className="absolute left-0 text-accent">·</span>
+                      <span aria-hidden className="absolute left-0 text-accent">
+                        ·
+                      </span>
                       {bullet}
                     </li>
                   ))}

@@ -22,11 +22,26 @@ npm start
 
 Copy `.env.example` to `.env` and fill in the values (used by the contact form):
 
-| Variable         | Description                                |
-| ---------------- | ------------------------------------------ |
-| `RESEND_API_KEY` | Resend API key                             |
-| `CONTACT_TO`     | Address that receives contact submissions  |
-| `CONTACT_FROM`   | Verified sender address for outgoing mail  |
+| Variable              | Description                                       |
+| --------------------- | ------------------------------------------------- |
+| `RESEND_API_KEY`      | Resend API key                                    |
+| `CONTACT_TO`          | Address that receives contact submissions         |
+| `CONTACT_FROM`        | Verified sender address for outgoing mail         |
+| `NEXT_PUBLIC_SITE_URL`| Canonical site origin (defaults to production URL)|
+
+The canonical site origin lives in `lib/site.ts` (`SITE.url`), which reads
+`NEXT_PUBLIC_SITE_URL` and falls back to `https://vael.studio`. All metadata,
+canonicals, sitemap, robots, and JSON-LD derive from it.
+
+## SEO and AEO assets
+
+- `public/llms.txt` is a hand-written summary for AI answer engines. It contains
+  the domain as literal URLs, so **update it whenever the domain changes** (the
+  `SITE.url` env var does not reach this static file).
+- `public/og.svg` is a placeholder social preview card. **Replace it with a real
+  1200x630 PNG before launch**, since some social platforms do not render SVG
+  previews. After adding `og.png`, update the image references in
+  `app/layout.tsx` from `/og.svg` to `/og.png`.
 
 ## Deploy on Coolify
 

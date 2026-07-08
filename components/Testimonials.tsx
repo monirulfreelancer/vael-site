@@ -26,11 +26,17 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="border-t border-border py-24">
+    <section
+      aria-labelledby="testimonials-heading"
+      className="border-t border-border py-24"
+    >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <span className="eyebrow">What clients say</span>
-          <h2 className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl">
+          <h2
+            id="testimonials-heading"
+            className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl"
+          >
             Founders and teams who needed it shipped.
           </h2>
         </Reveal>
@@ -39,8 +45,11 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <Reveal key={t.author} delay={i * 80}>
               <figure className="card flex h-full flex-col p-7">
-                <div className="mb-4 text-sm text-accent">
-                  {"★".repeat(t.rating)}
+                <div
+                  className="mb-4 text-sm text-accent"
+                  aria-label={`${t.rating} out of 5 stars`}
+                >
+                  <span aria-hidden>{"★".repeat(t.rating)}</span>
                 </div>
                 <blockquote className="flex-1 leading-relaxed text-text/90">
                   &ldquo;{t.quote}&rdquo;

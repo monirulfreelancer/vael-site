@@ -1,0 +1,27 @@
+# Vael
+> AI software development agency. We build custom AI apps, agents, and automation for businesses, from MVP to production, typically shipping in six weeks.
+
+## What we do
+- AI Agents & Assistants: custom assistants, chatbots, and RAG systems trained on your data
+- AI-Powered Apps: web and mobile products with AI features at the core
+- Business Automation: automations that remove repetitive work from teams
+- Custom Software & MVPs: bespoke systems, internal tools, and validated MVPs
+
+## Pricing
+- Launch (MVP): from $10,000, 3 to 5 weeks
+- Build (full product): $25,000 to $75,000, 6 to 10 weeks
+- Scale (complex systems): $75,000+, 10 to 16 weeks
+- Monthly retainer: $2,000 to $5,000+ per month
+All quotes are fixed price, agreed before work begins. No hourly billing.
+
+## How we work
+Four phases: Discovery and Strategy (week 1), Design and Planning (weeks 1 to 2), Development and Build (weeks 2 to 5), Launch and Support (week 5 onward). Clients own all code and infrastructure with no vendor lock-in.
+
+## Key pages
+- Homepage: https://vael.studio/
+- Case studies: https://vael.studio/work
+- Blog: https://vael.studio/blog
+- Start a project: https://vael.studio/order
+
+## Contact
+Start a project at https://vael.studio/order or email hello@vael.studio

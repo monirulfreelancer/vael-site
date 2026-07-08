@@ -6,11 +6,18 @@ export default function CaseStudies() {
   const studies = getFeaturedCaseStudies();
 
   return (
-    <section id="work" className="border-t border-border py-24">
+    <section
+      id="work"
+      aria-labelledby="work-heading"
+      className="border-t border-border py-24"
+    >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <span className="eyebrow">Selected work</span>
-          <h2 className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl">
+          <h2
+            id="work-heading"
+            className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl"
+          >
             Real problems, measurable results.
           </h2>
         </Reveal>

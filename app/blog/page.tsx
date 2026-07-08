@@ -4,11 +4,15 @@ import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import Reveal from "@/components/Reveal";
 import { getAllPosts } from "@/lib/blog";
+import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Blog",
   description:
     "Practical writing on AI software, automation, and shipping products fast.",
+  alternates: {
+    canonical: `${SITE.url}/blog`,
+  },
 };
 
 export default function BlogPage() {
@@ -30,6 +34,7 @@ export default function BlogPage() {
             </p>
           </Reveal>
 
+          <h2 className="sr-only">All posts</h2>
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post, i) => (
               <Reveal key={post.slug} delay={i * 80}>

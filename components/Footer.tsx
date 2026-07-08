@@ -23,7 +23,10 @@ export default function Footer() {
         <div className="flex flex-col items-start justify-between gap-10 sm:flex-row">
           <div className="max-w-xs">
             <a href="/" className="flex items-center gap-2.5">
-              <span className="flex h-7 w-7 items-center justify-center rounded-md border border-accent font-mono text-sm text-accent">
+              <span
+                aria-hidden
+                className="flex h-7 w-7 items-center justify-center rounded-md border border-accent font-mono text-sm text-accent"
+              >
                 V
               </span>
               <span className="font-display text-lg font-semibold">Vael</span>

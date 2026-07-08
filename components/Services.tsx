@@ -37,11 +37,18 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="border-t border-border py-24">
+    <section
+      id="services"
+      aria-labelledby="services-heading"
+      className="border-t border-border py-24"
+    >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <span className="eyebrow">What we build</span>
-          <h2 className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl">
+          <h2
+            id="services-heading"
+            className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl"
+          >
             AI at the core, full stack when you need it.
           </h2>
         </Reveal>

@@ -19,6 +19,7 @@ const clients = [
 export default function ClientLogos() {
   return (
     <section
+      aria-labelledby="clients-heading"
       className="border-t border-border py-12"
       style={{
         background:
@@ -27,7 +28,7 @@ export default function ClientLogos() {
     >
       <div className="mx-auto max-w-6xl px-5 text-center sm:px-8">
         <Reveal>
-          <span className="eyebrow text-center mb-8 text-muted">
+          <span id="clients-heading" className="eyebrow text-center mb-8 text-muted">
             Trusted by teams who needed it shipped
           </span>
         </Reveal>
@@ -51,7 +52,10 @@ export default function ClientLogos() {
                   key={client}
                   className="flex shrink-0 items-center gap-2.5 px-10"
                 >
-                  <span className="flex h-6 w-6 items-center justify-center rounded-md border border-border font-mono text-xs text-accent">
+                  <span
+                    aria-hidden
+                    className="flex h-6 w-6 items-center justify-center rounded-md border border-border font-mono text-xs text-accent"
+                  >
                     {client[0]}
                   </span>
                   <span className="whitespace-nowrap font-mono text-lg tracking-tight text-muted">

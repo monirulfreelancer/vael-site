@@ -48,7 +48,11 @@ const jsonLd = {
 
 export default function FAQ() {
   return (
-    <section id="faq" className="border-t border-border py-24">
+    <section
+      id="faq"
+      aria-labelledby="faq-heading"
+      className="border-t border-border py-24"
+    >
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -56,7 +60,10 @@ export default function FAQ() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <span className="eyebrow">Common questions</span>
-          <h2 className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl">
+          <h2
+            id="faq-heading"
+            className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl"
+          >
             Everything you want to know before we start.
           </h2>
         </Reveal>
@@ -69,7 +76,10 @@ export default function FAQ() {
             >
               <summary className="flex cursor-pointer list-none items-center justify-between p-6 font-medium [&::-webkit-details-marker]:hidden">
                 <span>{faq.question}</span>
-                <span className="ml-4 shrink-0 text-accent transition-transform duration-300 group-open:rotate-45">
+                <span
+                  aria-hidden
+                  className="ml-4 shrink-0 text-accent transition-transform duration-300 group-open:rotate-45"
+                >
                   +
                 </span>
               </summary>

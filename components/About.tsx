@@ -29,12 +29,18 @@ const pillars = [
 
 export default function About() {
   return (
-    <section id="about" className="border-t border-border py-24">
+    <section
+      id="about"
+      aria-labelledby="about-heading"
+      className="border-t border-border py-24"
+    >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <Reveal>
-              <span className="eyebrow">Why Vael</span>
+              <span id="about-heading" className="eyebrow">
+                Why Vael
+              </span>
               <p className="mt-6 text-xl leading-relaxed sm:text-2xl">
                 We are a software studio built for one idea: businesses should
                 not have to choose between quality and speed. We pair senior
