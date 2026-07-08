@@ -143,7 +143,7 @@ export default async function CaseStudyPage({
             <p className="text-xl font-medium">Have a similar problem?</p>
             <a
               href="/order"
-              className="mt-5 inline-block rounded-lg bg-accent px-6 py-3 text-sm font-medium text-bg transition-colors hover:bg-accent-dim"
+              className="btn-primary mt-5 inline-block rounded-lg bg-accent px-6 py-3 text-sm font-medium text-bg hover:bg-accent-dim"
             >
               Start your project
             </a>

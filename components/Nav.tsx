@@ -45,14 +45,14 @@ export default function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted transition-colors hover:text-text"
+              className="nav-link text-sm text-muted transition-colors hover:text-text"
             >
               {link.label}
             </a>
           ))}
           <a
             href="/order"
-            className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-bg transition-colors hover:bg-accent-dim"
+            className="btn-primary rounded-lg bg-accent px-4 py-2 text-sm font-medium text-bg hover:bg-accent-dim"
           >
             Start your project
           </a>
@@ -111,7 +111,7 @@ export default function Nav() {
             <a
               href="/order"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-lg bg-accent px-4 py-2.5 text-center text-sm font-medium text-bg transition-colors hover:bg-accent-dim"
+              className="btn-primary mt-2 rounded-lg bg-accent px-4 py-2.5 text-center text-sm font-medium text-bg hover:bg-accent-dim"
             >
               Start your project
             </a>

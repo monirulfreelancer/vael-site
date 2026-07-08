@@ -1,3 +1,4 @@
+import Counter from "./Counter";
 import Reveal from "./Reveal";
 
 // Placeholder metrics: replace with real numbers before launch, and delete any
@@ -32,7 +33,7 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="border-t border-border py-24"
+      className="section border-t border-border"
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-12">
@@ -64,12 +65,7 @@ export default function About() {
                     key={stat.label}
                     className="rounded-xl border border-border bg-surface p-5"
                   >
-                    <div className="text-3xl font-semibold text-accent">
-                      {stat.value}
-                    </div>
-                    <div className="mt-1 font-mono text-xs text-muted">
-                      {stat.label}
-                    </div>
+                    <Counter value={stat.value} label={stat.label} />
                   </div>
                 ))}
               </div>
@@ -77,7 +73,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-3">
+        <div className="mt-16 grid gap-5 sm:mt-20 sm:grid-cols-3">
           {pillars.map((pillar, i) => (
             <Reveal key={pillar.title} delay={i * 80}>
               <div className="flex gap-4">

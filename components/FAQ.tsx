@@ -51,7 +51,7 @@ export default function FAQ() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="border-t border-border py-24"
+      className="section border-t border-border"
     >
       <script
         type="application/ld+json"
@@ -62,13 +62,13 @@ export default function FAQ() {
           <span className="eyebrow">Common questions</span>
           <h2
             id="faq-heading"
-            className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl"
+            className="mt-6 max-w-2xl text-4xl font-semibold sm:text-5xl"
           >
             Everything you want to know before we start.
           </h2>
         </Reveal>
 
-        <div className="mx-auto mt-14 max-w-3xl space-y-3">
+        <div className="mx-auto mt-16 max-w-3xl space-y-3 sm:mt-20">
           {faqs.map((faq) => (
             <details
               key={faq.question}

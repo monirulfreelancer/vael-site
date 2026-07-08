@@ -60,20 +60,20 @@ export default function Process() {
     <section
       id="process"
       aria-labelledby="process-heading"
-      className="border-t border-border py-24"
+      className="section border-t border-border"
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <span className="eyebrow">How we work</span>
           <h2
             id="process-heading"
-            className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl"
+            className="mt-6 max-w-2xl text-4xl font-semibold sm:text-5xl"
           >
             A clear path from idea to launch. No surprises, no black box.
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 lg:grid-cols-4">
+        <div className="mt-16 grid grid-cols-1 gap-5 sm:mt-20 lg:grid-cols-4">
           {phases.map((phase, i) => (
             <Reveal key={phase.number} delay={i * 80}>
               <div className="card relative h-full p-6">

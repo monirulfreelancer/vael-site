@@ -3,6 +3,7 @@ import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
 import "./globals.css";
 import type { Metadata } from "next";
+import ScrollProgress from "@/components/ScrollProgress";
 import { SITE } from "@/lib/site";
 
 const title = "Vael | AI software development agency";
@@ -117,6 +118,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <div aria-hidden className="grain" />
+        <ScrollProgress />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}

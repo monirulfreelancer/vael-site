@@ -143,7 +143,7 @@ export default function Hero() {
             <Reveal delay={80}>
               <h1
                 id="hero-heading"
-                className="h-display mt-6 text-4xl font-semibold sm:text-5xl lg:text-[3.75rem]"
+                className="h-display mt-6 text-5xl font-semibold sm:text-6xl lg:text-7xl"
               >
                 We build AI software that does real work for{" "}
                 <span className="text-accent">your business.</span>
@@ -159,15 +159,21 @@ export default function Hero() {
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <a
                   href="/order"
-                  className="rounded-lg bg-accent px-6 py-3 text-sm font-medium text-bg transition-colors hover:bg-accent-dim"
+                  className="btn-primary rounded-lg bg-accent px-7 py-3.5 text-base font-medium text-bg hover:bg-accent-dim"
                 >
                   Start your project
                 </a>
                 <a
                   href="#work"
-                  className="rounded-lg border border-border px-6 py-3 text-sm text-text transition-colors hover:border-accent-dim"
+                  className="group inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-sm text-text transition-colors hover:border-accent-dim"
                 >
                   See our work
+                  <span
+                    aria-hidden
+                    className="text-accent transition-transform duration-300 group-hover:translate-y-0.5"
+                  >
+                    ↓
+                  </span>
                 </a>
               </div>
             </Reveal>

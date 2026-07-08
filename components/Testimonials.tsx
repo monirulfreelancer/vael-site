@@ -25,24 +25,54 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const [featured, ...rest] = testimonials;
+
   return (
     <section
       aria-labelledby="testimonials-heading"
-      className="border-t border-border py-24"
+      className="section border-t border-border"
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <span className="eyebrow">What clients say</span>
           <h2
             id="testimonials-heading"
-            className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl"
+            className="mt-6 max-w-2xl text-4xl font-semibold sm:text-5xl"
           >
             Founders and teams who needed it shipped.
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-3">
-          {testimonials.map((t, i) => (
+        <Reveal>
+          <figure className="mt-16 rounded-2xl border border-border bg-surface p-10 sm:mt-20 sm:p-14">
+            <div
+              aria-hidden
+              className="font-display text-6xl leading-none text-accent"
+            >
+              &ldquo;
+            </div>
+            <blockquote className="mt-4 text-2xl leading-snug text-text sm:text-3xl">
+              {featured.quote}
+            </blockquote>
+            <figcaption className="mt-8 flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <div className="font-medium">{featured.author}</div>
+                <div className="font-mono text-xs text-muted">
+                  {featured.role}
+                </div>
+              </div>
+              <div
+                className="text-sm text-accent"
+                aria-label={`${featured.rating} out of 5 stars`}
+              >
+                <span aria-hidden>{"★".repeat(featured.rating)}</span>
+              </div>
+            </figcaption>
+          </figure>
+        </Reveal>
+
+        <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
+          {rest.map((t, i) => (
             <Reveal key={t.author} delay={i * 80}>
               <figure className="card flex h-full flex-col p-7">
                 <div

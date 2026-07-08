@@ -40,20 +40,27 @@ export default function Services() {
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="border-t border-border py-24"
+      className="section relative overflow-hidden border-t border-border"
     >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-24 -left-24 -z-10 h-[420px] w-[420px] rounded-full opacity-[0.06] blur-3xl"
+        style={{
+          background: "radial-gradient(closest-side, #FFC24B, transparent)",
+        }}
+      />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <span className="eyebrow">What we build</span>
           <h2
             id="services-heading"
-            className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl"
+            className="mt-6 max-w-2xl text-4xl font-semibold sm:text-5xl"
           >
             AI at the core, full stack when you need it.
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 gap-5 sm:mt-20 sm:grid-cols-2">
           {services.map((service, i) => (
             <Reveal key={service.name} delay={i * 80}>
               <div className="card group h-full p-7">

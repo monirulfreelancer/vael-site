@@ -105,27 +105,36 @@ export default function Pricing() {
     <section
       id="pricing"
       aria-labelledby="pricing-heading"
-      className="border-t border-border py-24"
+      className="section relative overflow-hidden border-t border-border"
     >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-40 -z-10 h-[440px] w-[760px] -translate-x-1/2 opacity-[0.06] blur-3xl"
+        style={{
+          background: "radial-gradient(closest-side, #FFC24B, transparent)",
+        }}
+      />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <span className="eyebrow">Engagement models</span>
           <h2
             id="pricing-heading"
-            className="mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl"
+            className="mt-6 max-w-2xl text-4xl font-semibold sm:text-5xl"
           >
             Transparent pricing, scoped to your project.
           </h2>
-          <p className="mt-4 text-muted">No hourly billing surprises.</p>
+          <p className="mt-4 max-w-xl text-lg text-muted">
+            No hourly billing surprises.
+          </p>
         </Reveal>
 
-        <div className="mt-10 inline-flex rounded-lg border border-border p-1 font-mono text-sm">
+        <div className="mt-16 inline-flex rounded-lg border border-border p-1 font-mono text-sm sm:mt-20">
           {modes.map((m) => (
             <button
               key={m.key}
               type="button"
               onClick={() => setMode(m.key)}
-              className={`rounded-md px-4 py-2 transition-colors ${
+              className={`rounded-md px-4 py-2 transition-colors duration-200 ${
                 mode === m.key
                   ? "bg-accent text-bg"
                   : "text-muted hover:text-text"
@@ -140,6 +149,14 @@ export default function Pricing() {
           {tiers.map((tier) => (
             <div
               key={tier.name}
+              style={
+                tier.popular
+                  ? {
+                      background:
+                        "linear-gradient(180deg, rgba(255,194,75,0.06), transparent 40%), var(--color-surface)",
+                    }
+                  : undefined
+              }
               className={`relative flex h-full flex-col rounded-2xl bg-surface p-7 ${
                 tier.popular
                   ? "border-2 border-accent"
@@ -157,7 +174,7 @@ export default function Pricing() {
                 {tier.subtitle}
               </p>
 
-              <p className="mt-5 text-3xl font-semibold">{tier.price}</p>
+              <p className="mt-5 text-4xl font-semibold">{tier.price}</p>
               <p className="mt-1 font-mono text-xs text-accent">
                 {tier.timeline}
               </p>
@@ -182,10 +199,10 @@ export default function Pricing() {
 
               <a
                 href="/order"
-                className={`mt-5 rounded-lg px-4 py-2.5 text-center font-medium transition-colors ${
+                className={`mt-5 rounded-lg px-4 py-2.5 text-center font-medium ${
                   tier.popular
-                    ? "bg-accent text-bg hover:bg-accent-dim"
-                    : "border border-border hover:border-accent-dim"
+                    ? "btn-primary bg-accent text-bg hover:bg-accent-dim"
+                    : "border border-border transition-colors hover:border-accent-dim"
                 }`}
               >
                 Start your project
