@@ -1,19 +1,22 @@
 import Reveal from "./Reveal";
 
-// Placeholder text lettermarks. To swap in real image logos later: drop the
-// files into public/logos/ (SVG preferred), change this array to objects like
-// { name: "Northwind", src: "/logos/northwind.svg" }, and replace the bordered
-// letter square + name spans below with an <img> sized to a fixed height
-// (e.g. h-6 w-auto) so the marquee rows keep a consistent scale.
+// Real clients, shown as text wordmarks. To add or remove one, edit this
+// array: order here is display order, and the marquee duplicates the full
+// list automatically for the seamless loop. If the list grows much longer,
+// consider raising the marquee duration in globals.css so it stays readable.
 const clients = [
-  "Northwind",
-  "Apex Labs",
-  "Brightly",
-  "Vertex",
-  "Lumen",
-  "Quanta",
-  "Helios",
-  "Cobalt",
+  "Volante Technologies",
+  "Devstorms",
+  "Lucid Design Group",
+  "MediMizer",
+  "Kudit",
+  "Venga",
+  "Tomerlin-ERP",
+  "Stone Enterprises",
+  "AppJester",
+  "nMile",
+  "Integrity Consulting",
+  "Team Soft Solutions",
 ];
 
 export default function ClientLogos() {
@@ -29,7 +32,7 @@ export default function ClientLogos() {
       <div className="mx-auto max-w-6xl px-5 text-center sm:px-8">
         <Reveal>
           <span id="clients-heading" className="eyebrow text-center mb-8 text-muted">
-            Trusted by teams who needed it shipped
+            Companies we have worked with
           </span>
         </Reveal>
       </div>
@@ -46,22 +49,14 @@ export default function ClientLogos() {
 
         <div className="marquee">
           {[0, 1].map((copy) => (
-            <div key={copy} className="flex" aria-hidden={copy === 1}>
+            <div key={copy} className="flex items-center" aria-hidden={copy === 1}>
               {clients.map((client) => (
-                <div
+                <span
                   key={client}
-                  className="flex shrink-0 items-center gap-2.5 px-10"
+                  className="shrink-0 whitespace-nowrap px-12 font-display text-xl font-medium tracking-tight text-muted/70 underline decoration-transparent underline-offset-[6px] transition-colors hover:text-text hover:decoration-accent"
                 >
-                  <span
-                    aria-hidden
-                    className="flex h-6 w-6 items-center justify-center rounded-md border border-border font-mono text-xs text-accent"
-                  >
-                    {client[0]}
-                  </span>
-                  <span className="whitespace-nowrap font-mono text-lg tracking-tight text-muted">
-                    {client}
-                  </span>
-                </div>
+                  {client}
+                </span>
               ))}
             </div>
           ))}
