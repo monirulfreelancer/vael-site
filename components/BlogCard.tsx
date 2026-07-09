@@ -18,7 +18,7 @@ export default function BlogCard({ post }: { post: PostMeta }) {
         {post.title}
       </h3>
 
-      <p className="mt-3 line-clamp-3 text-base leading-relaxed text-text/70">
+      <p className="mt-3 line-clamp-3 text-base leading-relaxed text-text/80">
         {post.description}
       </p>
 
@@ -26,7 +26,7 @@ export default function BlogCard({ post }: { post: PostMeta }) {
         {formatDate(post.date)} · {post.readingTime}
       </p>
 
-      <p className="mt-4 font-mono text-xs text-accent">Read post →</p>
+      <p className="mt-4 text-sm text-accent">Read post →</p>
     </a>
   );
 }

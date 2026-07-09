@@ -171,9 +171,7 @@ export default function Pricing() {
               )}
 
               <h3 className="text-xl font-semibold text-text">{tier.name}</h3>
-              <p className="mt-1 font-mono text-xs text-muted">
-                {tier.subtitle}
-              </p>
+              <p className="mt-1 text-sm text-muted">{tier.subtitle}</p>
 
               <p className="mt-5 text-4xl font-semibold text-text">
                 {tier.price}
@@ -186,7 +184,7 @@ export default function Pricing() {
                 {tier.features.map((feature) => (
                   <li
                     key={feature}
-                    className="relative pl-5 text-base leading-relaxed text-text/75"
+                    className="relative pl-5 text-base leading-relaxed text-text/80"
                   >
                     <span aria-hidden className="absolute left-0 text-accent">
                       ✓
@@ -196,8 +194,9 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <p className="mt-6 font-mono text-xs text-muted">
-                <span className="text-accent">Best for:</span> {tier.bestFor}
+              <p className="mt-5 border-t border-border pt-4 text-sm">
+                <span className="font-semibold text-text/70">Best for:</span>{" "}
+                <span className="text-text/60">{tier.bestFor}</span>
               </p>
 
               <a

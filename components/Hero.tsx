@@ -67,7 +67,7 @@ export default function Hero() {
           </div>
         </Reveal>
         <Reveal delay={320}>
-          <p className="mt-10 font-mono text-sm tracking-[0.08em] text-text/60">
+          <p className="mt-10 text-base tracking-[0.02em] text-text/60">
             AI agents · custom apps · automation · web and mobile
           </p>
         </Reveal>

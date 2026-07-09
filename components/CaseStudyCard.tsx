@@ -30,7 +30,7 @@ export default function CaseStudyCard({ study }: { study: CaseStudyMeta }) {
             </span>
           </p>
         )}
-        <p className="mt-5 font-mono text-xs text-accent">
+        <p className="mt-5 text-sm text-accent">
           View case{" "}
           <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
             →

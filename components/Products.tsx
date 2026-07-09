@@ -148,13 +148,11 @@ export default function Products() {
                 <h3 className="mt-5 text-2xl font-semibold text-text">
                   {product.name}
                 </h3>
-                <p className="mt-1 font-mono text-xs text-muted">
-                  {product.category}
-                </p>
-                <p className="mt-3 text-base leading-relaxed text-text/70">
+                <p className="mt-1 text-sm text-muted">{product.category}</p>
+                <p className="mt-3 text-base leading-relaxed text-text/80">
                   {product.description}
                 </p>
-                <p className="mt-5 font-mono text-xs text-accent">
+                <p className="mt-5 text-sm text-accent">
                   Visit site{" "}
                   <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
                     →
@@ -175,7 +173,7 @@ export default function Products() {
               <h3 className="mt-5 text-2xl font-semibold text-text">
                 And yours next.
               </h3>
-              <p className="mt-3 text-base leading-relaxed text-text/70">
+              <p className="mt-3 text-base leading-relaxed text-text/80">
                 Every product here started as a scoped six week build. So can
                 yours.
               </p>

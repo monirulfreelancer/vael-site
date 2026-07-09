@@ -147,7 +147,7 @@ export default function OrderForm() {
                       }`}
                     >
                       <div className="font-medium text-text">{s.name}</div>
-                      <div className="mt-0.5 text-base text-text/70">
+                      <div className="mt-0.5 text-base text-text/80">
                         {s.description}
                       </div>
                     </button>

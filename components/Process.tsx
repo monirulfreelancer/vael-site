@@ -95,7 +95,7 @@ export default function Process() {
                 </div>
 
                 <h3 className="mt-5 text-xl font-semibold">{phase.name}</h3>
-                <p className="mt-2 text-base leading-relaxed text-text/70">
+                <p className="mt-2 text-base leading-relaxed text-text/80">
                   {phase.description}
                 </p>
 
@@ -103,19 +103,21 @@ export default function Process() {
                   {phase.bullets.map((bullet) => (
                     <li
                       key={bullet}
-                      className="relative pl-4 text-base leading-relaxed text-text/70"
+                      className="relative pl-5 text-base leading-relaxed text-text/75"
                     >
                       <span aria-hidden className="absolute left-0 text-accent">
-                        ·
+                        ✓
                       </span>
                       {bullet}
                     </li>
                   ))}
                 </ul>
 
-                <p className="mt-5 font-mono text-xs leading-relaxed text-muted">
-                  <span className="text-accent">Deliverables:</span>{" "}
-                  {phase.deliverables}
+                <p className="mt-5 border-t border-border pt-4 text-sm leading-relaxed">
+                  <span className="font-semibold text-text/70">
+                    Deliverables:
+                  </span>{" "}
+                  <span className="text-text/60">{phase.deliverables}</span>
                 </p>
               </div>
             </Reveal>

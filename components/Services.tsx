@@ -119,15 +119,15 @@ export default function Services() {
                 <h3 className="text-2xl font-semibold text-text">
                   {service.name}
                 </h3>
-                <p className="mt-1.5 font-medium text-text/90">
+                <p className="mt-1.5 text-lg font-medium text-text">
                   {service.promise}
                 </p>
-                <p className="mt-3 text-base leading-relaxed text-text/70">
+                <p className="mt-3 text-base leading-relaxed text-text/80">
                   {service.description}
                 </p>
-                <p className="mt-5 font-mono text-xs text-muted">
-                  <span className="text-accent">Best for:</span>{" "}
-                  {service.bestFor}
+                <p className="mt-5 border-t border-border pt-4 text-sm">
+                  <span className="font-semibold text-text/70">Best for:</span>{" "}
+                  <span className="text-text/60">{service.bestFor}</span>
                 </p>
               </div>
             </Reveal>

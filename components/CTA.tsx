@@ -50,7 +50,7 @@ export default function CTA() {
               See our work
             </a>
           </div>
-          <p className="mt-8 font-mono text-xs text-muted">
+          <p className="mt-8 text-sm tracking-[0.02em] text-text/60">
             Free consultation · Fixed price · No hourly billing
           </p>
         </Reveal>
