@@ -1,4 +1,9 @@
+import InView from "./InView";
 import Reveal from "./Reveal";
+
+// Horizontal centers of the four cards in the lg grid, used for the connector
+// line endpoints and the node dots.
+const dotPositions = ["12.5%", "37.5%", "62.5%", "87.5%"];
 
 const phases = [
   {
@@ -81,7 +86,23 @@ export default function Process() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-5 sm:mt-20 lg:grid-cols-4">
+        <div className="relative mt-16 grid grid-cols-1 gap-5 sm:mt-20 lg:grid-cols-4">
+          <InView
+            className="process-connector pointer-events-none absolute inset-0 hidden lg:block"
+            aria-hidden
+          >
+            <div
+              className="process-line absolute left-[12.5%] right-[12.5%] top-[2.6rem] h-0.5 bg-accent"
+              style={{ zIndex: -1 }}
+            />
+            {dotPositions.map((left, i) => (
+              <div
+                key={left}
+                className="process-dot absolute top-[2.6rem] h-2 w-2 -translate-y-1/2 rounded-full bg-accent"
+                style={{ left, zIndex: 5, animationDelay: `${(i + 1) * 200}ms` }}
+              />
+            ))}
+          </InView>
           {phases.map((phase, i) => (
             <Reveal key={phase.number} delay={i * 80}>
               <div className="card relative h-full p-6">

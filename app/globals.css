@@ -183,6 +183,93 @@ h3 {
     block-size: auto;
   }
 
+  /* Hero rotating word. An invisible sizer reserves the widest word's box so
+     the slot never shifts width; the animated words are layered over it and
+     clipped by an absolute layer, which keeps the container baseline aligned
+     with the surrounding text. */
+  .rotating-word {
+    position: relative;
+    display: inline-block;
+  }
+
+  .rotating-word__sizer {
+    visibility: hidden;
+    font-weight: 600;
+  }
+
+  .rotating-word__clip {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .rotating-word__word {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  .rotating-word__word.is-in {
+    animation: word-roll-in 0.4s ease;
+  }
+
+  .rotating-word__word.is-out {
+    animation: word-roll-out 0.4s ease forwards;
+  }
+
+  /* Process connector. The line draws itself when the wrapper scrolls in; the
+     dots fade in on a per-dot delay after the line passes each one. */
+  .process-line {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  .process-connector.in .process-line {
+    animation: draw-line 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .process-dot {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+
+  .process-connector.in .process-dot {
+    animation: dot-in 0.4s ease forwards;
+  }
+
+  /* Nav active-section dot, centered beneath the link without resizing it. */
+  .nav-dot {
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    height: 4px;
+    width: 4px;
+    border-radius: 9999px;
+    background: var(--color-accent);
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-dot.is-active {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+
+  /* Order form step entrance, direction aware. */
+  .step-forward {
+    animation: step-in-right 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .step-back {
+    animation: step-in-left 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
   /* Amber CTA lift + glow. Buttons that use this drop `transition-colors` so
      this transition owns transform, shadow, and background together. */
   .btn-primary {
@@ -411,6 +498,70 @@ h3 {
   }
 }
 
+@keyframes word-roll-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes word-roll-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes draw-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes dot-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes step-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes step-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 ::selection {
   background: var(--color-accent);
   color: #ffffff;
@@ -481,5 +632,14 @@ input[type="checkbox"]:focus-visible {
   /* ::details-content is not matched by the global *::after reset above. */
   .faq-item::details-content {
     transition: none;
+  }
+
+  /* The connector base states are hidden; show it fully drawn instead. */
+  .process-line {
+    transform: scaleX(1);
+  }
+
+  .process-dot {
+    opacity: 1;
   }
 }

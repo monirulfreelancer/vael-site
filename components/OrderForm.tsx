@@ -63,9 +63,18 @@ const initialState: FormState = {
 
 export default function OrderForm() {
   const [step, setStep] = useState(1);
+  // Direction of the last step change, used to pick the entrance animation.
+  // Kept separate from `form` because `form` is serialized to the API payload.
+  const [direction, setDirection] = useState<"forward" | "back">("forward");
   const [form, setForm] = useState<FormState>(initialState);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+
+  function goToStep(next: number) {
+    setDirection(next > step ? "forward" : "back");
+    setError("");
+    setStep(next);
+  }
 
   function update<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -120,15 +129,20 @@ export default function OrderForm() {
             {[1, 2, 3].map((n) => (
               <div
                 key={n}
-                className={`h-0.5 flex-1 rounded-full ${
-                  n <= step ? "bg-accent" : "bg-border"
-                }`}
-              />
+                className="h-0.5 flex-1 overflow-hidden rounded-full bg-border"
+              >
+                <div
+                  className={`h-full rounded-full bg-accent transition-[width] duration-300 ${
+                    n <= step ? "w-full" : "w-0"
+                  }`}
+                />
+              </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-10 overflow-hidden">
+          <div key={step} className={direction === "back" ? "step-back" : "step-forward"}>
           {step === 1 && (
             <div>
               <h2 className="text-xl font-semibold">What do you need?</h2>
@@ -246,16 +260,14 @@ export default function OrderForm() {
               </div>
             </div>
           )}
+          </div>
         </div>
 
         <div className="mt-8 flex items-center justify-between">
           {step > 1 ? (
             <button
               type="button"
-              onClick={() => {
-                setError("");
-                setStep(step - 1);
-              }}
+              onClick={() => goToStep(step - 1)}
               className="rounded-lg px-4 py-2.5 text-sm text-muted transition-colors hover:text-text"
             >
               Back
@@ -267,7 +279,7 @@ export default function OrderForm() {
           {step < 3 ? (
             <button
               type="button"
-              onClick={() => setStep(step + 1)}
+              onClick={() => goToStep(step + 1)}
               disabled={
                 (step === 1 && !form.service) ||
                 (step === 2 && (!form.budget || !form.timeline))

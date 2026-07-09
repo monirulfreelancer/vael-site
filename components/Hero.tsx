@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Reveal from "./Reveal";
+import RotatingWord from "./RotatingWord";
 
 // Headline split into words at build time so the reveal is pure CSS. The two
 // amber phrases carry the accent flag; every word animates the same way.
@@ -71,8 +72,8 @@ export default function Hero() {
         </h1>
         <Reveal delay={700}>
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-text/85 sm:text-2xl">
-            Custom AI apps, agents, and automation. From first idea to
-            production, built by senior engineers and shipped in weeks.
+            Custom AI <RotatingWord />. From first idea to production, built by
+            senior engineers and shipped in weeks.
           </p>
         </Reveal>
         <Reveal delay={800}>
