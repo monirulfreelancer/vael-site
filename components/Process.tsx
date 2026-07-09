@@ -75,7 +75,7 @@ export default function Process() {
           <span className="eyebrow">How we work</span>
           <h2
             id="process-heading"
-            className="mt-6 max-w-2xl text-4xl font-bold sm:text-5xl"
+            className="mt-6 max-w-2xl text-4xl font-extrabold sm:text-5xl"
           >
             A clear path from idea to launch. No surprises, no black box.
           </h2>

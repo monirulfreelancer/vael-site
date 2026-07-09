@@ -50,7 +50,7 @@ export default function Testimonials() {
           <span className="eyebrow">What clients say</span>
           <h2
             id="testimonials-heading"
-            className="mt-6 max-w-2xl text-4xl font-bold sm:text-5xl"
+            className="mt-6 max-w-2xl text-4xl font-extrabold sm:text-5xl"
           >
             Founders and teams who needed it shipped.
           </h2>

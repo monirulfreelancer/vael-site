@@ -32,7 +32,7 @@ export default function Hero() {
         <Reveal delay={80}>
           <h1
             id="hero-heading"
-            className="h-display mt-6 text-5xl font-bold sm:text-6xl lg:text-7xl"
+            className="h-display mt-6 text-4xl font-bold sm:text-6xl lg:text-7xl"
           >
             We build <span className="text-accent">AI software</span> that does{" "}
             <span className="text-accent">real work</span> for your business.

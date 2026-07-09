@@ -103,7 +103,7 @@ export default function Services() {
           <span className="eyebrow">What we build</span>
           <h2
             id="services-heading"
-            className="mt-6 max-w-2xl text-4xl font-bold sm:text-5xl"
+            className="mt-6 max-w-2xl text-4xl font-extrabold sm:text-5xl"
           >
             AI at the core, full stack when you need it.
           </h2>

@@ -10,7 +10,7 @@
   --color-muted: #63636a;
   --color-border: #e7e4dd;
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Space Grotesk Variable", "Inter Variable", sans-serif;
+  --font-display: "Bricolage Grotesque Variable", "Inter Variable", sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
   /* text-base matches the 17px body size so adding the class to a
      previously unsized paragraph never shrinks it. */
@@ -50,7 +50,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
 }
 
 /* Component classes live in the components layer so Tailwind utilities
@@ -58,8 +58,8 @@ h3 {
 @layer components {
   .h-display {
     font-family: var(--font-display);
-    letter-spacing: -0.03em;
-    line-height: 1.02;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
   }
 
   .eyebrow {

@@ -24,7 +24,7 @@ export default async function CaseStudies() {
           <span className="eyebrow">Selected work</span>
           <h2
             id="work-heading"
-            className="mt-6 max-w-2xl text-4xl font-bold sm:text-5xl"
+            className="mt-6 max-w-2xl text-4xl font-extrabold sm:text-5xl"
           >
             Real problems, measurable results.
           </h2>

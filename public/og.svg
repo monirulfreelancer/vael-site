@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
   <rect width="1200" height="630" fill="#faf9f7"/>
-  <g font-family="'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif" font-weight="600">
+  <g font-family="'Bricolage Grotesque', 'Inter', ui-sans-serif, system-ui, sans-serif" font-weight="600">
     <text x="80" y="280" font-size="76" fill="#17171a" letter-spacing="-2">We build AI software</text>
     <text x="80" y="372" font-size="76" letter-spacing="-2">
       <tspan fill="#17171a">that does </tspan><tspan fill="#d98e04">real work.</tspan>

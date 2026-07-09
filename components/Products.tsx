@@ -122,7 +122,7 @@ export default function Products() {
             <span className="eyebrow text-center">Our own products</span>
             <h2
               id="products-heading"
-              className="mt-6 text-4xl font-bold sm:text-5xl"
+              className="mt-6 text-4xl font-extrabold sm:text-5xl"
             >
               We do not just build software. We run it.
             </h2>

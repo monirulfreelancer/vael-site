@@ -1,4 +1,4 @@
-import "@fontsource-variable/space-grotesk";
+import "@fontsource-variable/bricolage-grotesque";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
 import "./globals.css";

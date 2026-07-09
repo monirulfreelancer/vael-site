@@ -28,7 +28,7 @@ export default function CTA() {
           <span className="eyebrow text-center">Let us build it</span>
           <h2
             id="cta-heading"
-            className="h-display mt-6 text-4xl font-bold sm:text-6xl"
+            className="h-display mt-6 text-4xl font-extrabold sm:text-6xl"
           >
             Your project could ship in six weeks.
           </h2>

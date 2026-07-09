@@ -120,7 +120,7 @@ export default function Pricing() {
           <span className="eyebrow">Engagement models</span>
           <h2
             id="pricing-heading"
-            className="mt-6 max-w-2xl text-4xl font-bold sm:text-5xl"
+            className="mt-6 max-w-2xl text-4xl font-extrabold sm:text-5xl"
           >
             Transparent pricing, scoped to your project.
           </h2>

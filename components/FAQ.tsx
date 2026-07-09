@@ -70,7 +70,7 @@ export default function FAQ() {
           <span className="eyebrow">Common questions</span>
           <h2
             id="faq-heading"
-            className="mt-6 max-w-2xl text-4xl font-bold sm:text-5xl"
+            className="mt-6 max-w-2xl text-4xl font-extrabold sm:text-5xl"
           >
             Everything you want to know before we start.
           </h2>
