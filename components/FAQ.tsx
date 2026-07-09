@@ -80,7 +80,7 @@ export default function FAQ() {
           {faqs.map((faq) => (
             <details
               key={faq.question}
-              className="group overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-accent/40"
+              className="faq-item group overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-accent/40"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between p-6 text-lg font-medium [&::-webkit-details-marker]:hidden">
                 <span>{faq.question}</span>

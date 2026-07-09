@@ -146,7 +146,10 @@ export default function Pricing() {
           ))}
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div
+          key={mode}
+          className="pricing-grid mt-10 grid grid-cols-1 gap-5 md:grid-cols-3"
+        >
           {tiers.map((tier) => (
             <div
               key={tier.name}
