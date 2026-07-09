@@ -148,20 +148,21 @@ export default function Pricing() {
 
         <div
           key={mode}
-          className="pricing-grid mt-10 grid grid-cols-1 gap-5 md:grid-cols-3"
+          className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3"
         >
-          {tiers.map((tier) => (
+          {tiers.map((tier, i) => (
             <div
               key={tier.name}
-              style={
-                tier.popular
+              style={{
+                animationDelay: `${i * 60}ms`,
+                ...(tier.popular
                   ? {
                       background:
                         "linear-gradient(180deg, rgba(217,142,4,0.05), transparent 40%), var(--color-surface)",
                     }
-                  : undefined
-              }
-              className={`relative flex h-full flex-col rounded-2xl bg-surface p-7 ${
+                  : {}),
+              }}
+              className={`pricing-card relative flex h-full flex-col rounded-2xl bg-surface p-7 ${
                 tier.popular
                   ? "border-2 border-accent shadow-[0_1px_2px_rgba(23,23,26,0.04),0_8px_24px_-12px_rgba(23,23,26,0.08)]"
                   : "border border-border"
