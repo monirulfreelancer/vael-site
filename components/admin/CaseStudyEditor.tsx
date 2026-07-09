@@ -326,7 +326,7 @@ export default function CaseStudyEditor({ study }: { study?: CaseStudyData }) {
           type="checkbox"
           checked={form.featured}
           onChange={(e) => update("featured", e.target.checked)}
-          className="h-4 w-4 rounded border-border accent-[#ffc24b]"
+          className="h-4 w-4 rounded border-border accent-accent"
         />
         <span className="font-medium">Featured</span>
         <span className="text-sm text-muted">Shows on the homepage.</span>
@@ -337,7 +337,7 @@ export default function CaseStudyEditor({ study }: { study?: CaseStudyData }) {
           type="checkbox"
           checked={form.published}
           onChange={(e) => update("published", e.target.checked)}
-          className="h-4 w-4 rounded border-border accent-[#ffc24b]"
+          className="h-4 w-4 rounded border-border accent-accent"
         />
         <span className="font-medium">Published</span>
         <span className="text-sm text-muted">

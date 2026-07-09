@@ -56,7 +56,7 @@ export default function LoginForm() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           autoComplete="email"
-          className="w-full rounded-lg border border-border bg-bg px-4 py-3 outline-none transition-colors focus:border-accent"
+          className="w-full rounded-lg border border-border bg-white px-4 py-3 outline-none transition-colors focus:border-accent"
         />
         <input
           type="password"
@@ -64,7 +64,7 @@ export default function LoginForm() {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           autoComplete="current-password"
-          className="w-full rounded-lg border border-border bg-bg px-4 py-3 outline-none transition-colors focus:border-accent"
+          className="w-full rounded-lg border border-border bg-white px-4 py-3 outline-none transition-colors focus:border-accent"
         />
       </div>
 

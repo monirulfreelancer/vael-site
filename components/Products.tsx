@@ -52,9 +52,10 @@ export default function Products() {
     >
       <div
         aria-hidden
-        className="glow left-1/2 top-1/3 h-[600px] w-[1000px] -translate-x-1/2 opacity-[0.10]"
+        className="glow left-1/2 top-1/3 h-[600px] w-[1000px] -translate-x-1/2 opacity-[0.05]"
         style={{
-          background: "radial-gradient(closest-side, #FFC24B, transparent)",
+          background:
+            "radial-gradient(closest-side, var(--color-accent), transparent)",
         }}
       />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
@@ -104,7 +105,7 @@ export default function Products() {
           ))}
 
           <Reveal delay={products.length * 80}>
-            <div className="h-full rounded-2xl border border-border bg-surface p-7">
+            <div className="h-full rounded-2xl border border-border bg-surface p-7 shadow-[0_1px_2px_rgba(23,23,26,0.04),0_8px_24px_-12px_rgba(23,23,26,0.08)]">
               <div aria-hidden className="text-2xl text-accent">
                 →
               </div>

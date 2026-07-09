@@ -109,9 +109,10 @@ export default function Pricing() {
     >
       <div
         aria-hidden
-        className="glow left-1/2 top-40 h-[880px] w-[1400px] -translate-x-1/2 opacity-[0.14]"
+        className="glow left-1/2 top-40 h-[880px] w-[1400px] -translate-x-1/2 opacity-[0.07]"
         style={{
-          background: "radial-gradient(closest-side, #FFC24B, transparent)",
+          background:
+            "radial-gradient(closest-side, var(--color-accent), transparent)",
         }}
       />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
@@ -153,13 +154,13 @@ export default function Pricing() {
                 tier.popular
                   ? {
                       background:
-                        "linear-gradient(180deg, rgba(255,194,75,0.06), transparent 40%), var(--color-surface)",
+                        "linear-gradient(180deg, rgba(217,142,4,0.05), transparent 40%), var(--color-surface)",
                     }
                   : undefined
               }
               className={`relative flex h-full flex-col rounded-2xl bg-surface p-7 ${
                 tier.popular
-                  ? "border-2 border-accent"
+                  ? "border-2 border-accent shadow-[0_1px_2px_rgba(23,23,26,0.04),0_8px_24px_-12px_rgba(23,23,26,0.08)]"
                   : "border border-border"
               }`}
             >

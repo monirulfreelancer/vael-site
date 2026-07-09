@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" fill="none">
-  <rect width="800" height="500" fill="#141416"/>
-  <rect x="1" y="1" width="798" height="498" fill="none" stroke="#232327" stroke-width="2"/>
-  <circle cx="400" cy="210" r="46" fill="none" stroke="#FFC24B" stroke-width="2"/>
-  <text x="400" y="210" fill="#FFC24B" font-family="ui-monospace, monospace" font-size="34" font-weight="600" text-anchor="middle" dominant-baseline="central">V</text>
-  <text x="400" y="300" fill="#8A8A8F" font-family="ui-monospace, monospace" font-size="15" letter-spacing="3" text-anchor="middle">AI SUPPORT AGENT</text>
-  <text x="400" y="330" fill="#444448" font-family="ui-monospace, monospace" font-size="13" text-anchor="middle">replace with your real screenshot</text>
+  <rect width="800" height="500" fill="#f3f1ec"/>
+  <rect x="1" y="1" width="798" height="498" fill="none" stroke="#e7e4dd" stroke-width="2"/>
+  <circle cx="400" cy="210" r="46" fill="none" stroke="#d98e04" stroke-width="2"/>
+  <text x="400" y="210" fill="#d98e04" font-family="ui-monospace, monospace" font-size="34" font-weight="600" text-anchor="middle" dominant-baseline="central">V</text>
+  <text x="400" y="300" fill="#63636a" font-family="ui-monospace, monospace" font-size="15" letter-spacing="3" text-anchor="middle">AI SUPPORT AGENT</text>
+  <text x="400" y="330" fill="#a3a099" font-family="ui-monospace, monospace" font-size="13" text-anchor="middle">replace with your real screenshot</text>
 </svg>

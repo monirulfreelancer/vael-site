@@ -8,17 +8,18 @@ export default function Hero() {
     >
       <div
         aria-hidden
-        className="glow left-1/2 top-0 h-[680px] w-[1200px] -translate-x-1/2 -translate-y-1/4 opacity-[0.26]"
+        className="glow left-1/2 top-0 h-[680px] w-[1200px] -translate-x-1/2 -translate-y-1/4 opacity-[0.13]"
         style={{
-          background: "radial-gradient(closest-side, #FFC24B, transparent)",
+          background:
+            "radial-gradient(closest-side, var(--color-accent), transparent)",
         }}
       />
       <div
         aria-hidden
-        className="glow left-[12%] top-48 h-[420px] w-[420px] opacity-[0.10]"
+        className="glow left-[12%] top-48 h-[420px] w-[420px] opacity-[0.05]"
         style={{
           background:
-            "radial-gradient(closest-side, rgba(255,140,50,0.9), transparent)",
+            "radial-gradient(closest-side, rgba(232,120,30,0.9), transparent)",
         }}
       />
 

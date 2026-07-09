@@ -8,17 +8,18 @@ export default function CTA() {
     >
       <div
         aria-hidden
-        className="glow left-1/2 top-1/2 h-[600px] w-[1000px] -translate-x-1/2 -translate-y-1/2 opacity-[0.16]"
+        className="glow left-1/2 top-1/2 h-[600px] w-[1000px] -translate-x-1/2 -translate-y-1/2 opacity-[0.08]"
         style={{
-          background: "radial-gradient(closest-side, #FFC24B, transparent)",
+          background:
+            "radial-gradient(closest-side, var(--color-accent), transparent)",
         }}
       />
       <div
         aria-hidden
-        className="glow right-[5%] top-1/4 h-[500px] w-[500px] opacity-[0.10]"
+        className="glow right-[5%] top-1/4 h-[500px] w-[500px] opacity-[0.05]"
         style={{
           background:
-            "radial-gradient(closest-side, rgba(255,140,50,0.9), transparent)",
+            "radial-gradient(closest-side, rgba(232,120,30,0.9), transparent)",
         }}
       />
 

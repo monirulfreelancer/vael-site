@@ -26,7 +26,7 @@ export default function ClientLogos() {
       className="border-t border-border pb-14 pt-8"
       style={{
         background:
-          "linear-gradient(180deg, rgba(255,194,75,0.015), transparent 40%)",
+          "linear-gradient(180deg, rgba(217,142,4,0.015), transparent 40%)",
       }}
     >
       <div className="mx-auto max-w-6xl px-5 text-center sm:px-8">
@@ -53,7 +53,7 @@ export default function ClientLogos() {
               {clients.map((client) => (
                 <span
                   key={client}
-                  className="shrink-0 whitespace-nowrap px-12 font-display text-xl font-medium tracking-tight text-muted/70 underline decoration-transparent underline-offset-[6px] transition-colors hover:text-text hover:decoration-accent"
+                  className="shrink-0 whitespace-nowrap px-12 font-display text-xl font-medium tracking-tight text-muted/80 underline decoration-transparent underline-offset-[6px] transition-colors hover:text-text hover:decoration-accent"
                 >
                   {client}
                 </span>

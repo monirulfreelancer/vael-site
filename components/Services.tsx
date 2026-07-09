@@ -44,9 +44,10 @@ export default function Services() {
     >
       <div
         aria-hidden
-        className="glow -bottom-48 -left-48 h-[840px] w-[840px] opacity-[0.14]"
+        className="glow -bottom-48 -left-48 h-[840px] w-[840px] opacity-[0.07]"
         style={{
-          background: "radial-gradient(closest-side, #FFC24B, transparent)",
+          background:
+            "radial-gradient(closest-side, var(--color-accent), transparent)",
         }}
       />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">

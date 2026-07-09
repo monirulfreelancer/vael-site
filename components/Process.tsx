@@ -64,9 +64,10 @@ export default function Process() {
     >
       <div
         aria-hidden
-        className="glow -bottom-40 -right-40 h-[600px] w-[600px] opacity-[0.10]"
+        className="glow -bottom-40 -right-40 h-[600px] w-[600px] opacity-[0.05]"
         style={{
-          background: "radial-gradient(closest-side, #FFC24B, transparent)",
+          background:
+            "radial-gradient(closest-side, var(--color-accent), transparent)",
         }}
       />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">

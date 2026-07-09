@@ -37,9 +37,10 @@ export default function About() {
     >
       <div
         aria-hidden
-        className="glow -left-56 top-1/2 h-[600px] w-[600px] -translate-y-1/2 opacity-[0.10]"
+        className="glow -left-56 top-1/2 h-[600px] w-[600px] -translate-y-1/2 opacity-[0.05]"
         style={{
-          background: "radial-gradient(closest-side, #FFC24B, transparent)",
+          background:
+            "radial-gradient(closest-side, var(--color-accent), transparent)",
         }}
       />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">

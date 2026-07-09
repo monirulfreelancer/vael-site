@@ -55,9 +55,10 @@ export default function FAQ() {
     >
       <div
         aria-hidden
-        className="glow -bottom-56 left-1/2 h-[500px] w-[900px] -translate-x-1/2 opacity-[0.10]"
+        className="glow -bottom-56 left-1/2 h-[500px] w-[900px] -translate-x-1/2 opacity-[0.05]"
         style={{
-          background: "radial-gradient(closest-side, #FFC24B, transparent)",
+          background:
+            "radial-gradient(closest-side, var(--color-accent), transparent)",
         }}
       />
       <script
