@@ -129,7 +129,7 @@ export default function Pricing() {
           </p>
         </Reveal>
 
-        <div className="mt-16 inline-flex rounded-lg border border-border p-1 font-mono text-sm sm:mt-20">
+        <div className="mt-16 inline-flex rounded-lg border border-border bg-surface2 p-1 font-mono text-sm shadow-[inset_0_1px_3px_rgba(23,23,26,0.08)] sm:mt-20">
           {modes.map((m) => (
             <button
               key={m.key}
@@ -137,7 +137,7 @@ export default function Pricing() {
               onClick={() => setMode(m.key)}
               className={`rounded-md px-4 py-2 transition-colors duration-200 ${
                 mode === m.key
-                  ? "bg-accent text-bg"
+                  ? "bg-accent font-semibold text-bg"
                   : "text-text/60 hover:text-text"
               }`}
             >
@@ -158,42 +158,57 @@ export default function Pricing() {
                 ...(tier.popular
                   ? {
                       background:
-                        "linear-gradient(180deg, rgba(217,142,4,0.05), transparent 40%), var(--color-surface)",
+                        "linear-gradient(160deg, rgba(217,142,4,0.10), rgba(255,170,80,0.04) 50%, transparent), var(--color-surface)",
                     }
                   : {}),
               }}
               className={`pricing-card relative flex h-full flex-col rounded-2xl bg-surface p-7 ${
                 tier.popular
-                  ? "border-2 border-accent shadow-[0_1px_2px_rgba(23,23,26,0.04),0_8px_24px_-12px_rgba(23,23,26,0.08)]"
-                  : "border border-border"
+                  ? "pricing-card-popular border-2 border-accent shadow-[0_20px_50px_-20px_rgba(217,142,4,0.35)] lg:z-10"
+                  : "border border-border shadow-[0_1px_2px_rgba(23,23,26,0.04),0_14px_36px_-16px_rgba(23,23,26,0.14)]"
               }`}
             >
               {tier.popular && (
-                <span className="absolute -top-3 left-7 rounded-full bg-accent px-3 py-1 font-mono text-xs text-bg">
+                <span className="absolute -top-3 left-7 rounded-full bg-accent px-4 py-1.5 text-xs font-semibold text-white">
                   Most popular
                 </span>
               )}
 
-              <h3 className="text-xl font-semibold text-text">{tier.name}</h3>
+              <h3 className="text-2xl font-bold text-text">{tier.name}</h3>
               <p className="mt-1 text-sm text-muted">{tier.subtitle}</p>
 
-              <p className="mt-5 text-4xl font-semibold text-text">
+              <p className="mt-6 text-5xl font-extrabold tracking-tight text-text sm:text-6xl">
                 {tier.price}
               </p>
-              <p className="mt-1 font-mono text-xs text-accent">
+              <p className="mt-2 text-sm font-medium text-accent">
                 {tier.timeline}
               </p>
 
-              <ul className="mt-6 flex-1 space-y-2.5">
+              <ul className="mt-6 flex-1">
                 {tier.features.map((feature) => (
                   <li
                     key={feature}
-                    className="relative pl-5 text-base leading-relaxed text-text/80"
+                    className="flex items-center gap-3 py-1 text-base text-text/85"
                   >
-                    <span aria-hidden className="absolute left-0 text-accent">
-                      ✓
+                    <span
+                      aria-hidden
+                      className="flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-full bg-accent/12"
+                    >
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-accent"
+                      >
+                        <path d="M5 13l4 4L19 7" />
+                      </svg>
                     </span>
-                    {feature}
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -205,7 +220,7 @@ export default function Pricing() {
 
               <a
                 href="/order"
-                className={`mt-5 rounded-full px-4 py-2.5 text-center font-medium ${
+                className={`mt-5 rounded-full px-4 py-3.5 text-center text-base font-semibold ${
                   tier.popular
                     ? "btn-primary bg-accent text-bg hover:bg-accent-dim"
                     : "border border-border transition-colors hover:border-accent-dim"

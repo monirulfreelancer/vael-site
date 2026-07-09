@@ -164,9 +164,21 @@ h3 {
   }
 
   /* Pricing tier cards slide and scale in from the right when the mode key
-     changes, cascading left to right via a per-card inline delay. */
+     changes, cascading left to right via a per-card inline delay. The resting
+     scale is a variable so the popular card can settle at 1.03 while the
+     entrance animation still owns the transform. */
   .pricing-card {
+    --rest-scale: 1;
     animation: pricing-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @media (min-width: 1024px) {
+    .pricing-card-popular {
+      --rest-scale: 1.03;
+      /* Base transform for the reduced-motion path, where the animation that
+         would otherwise hold the scale is stripped. */
+      transform: scale(1.03);
+    }
   }
 
   /* Smooth unfold for the FAQ answers. ::details-content is not covered by the
@@ -485,7 +497,7 @@ h3 {
   }
   to {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: translateX(0) scale(var(--rest-scale));
   }
 }
 
