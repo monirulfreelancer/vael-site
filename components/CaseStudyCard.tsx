@@ -17,7 +17,7 @@ export default function CaseStudyCard({ study }: { study: CaseStudyMeta }) {
       </div>
       <div className="p-6">
         <span className="pill">{study.industry}</span>
-        <h3 className="mt-4 text-2xl font-semibold leading-snug text-text">
+        <h3 className="mt-4 text-xl font-semibold leading-snug text-text">
           {study.title}
         </h3>
         {firstMetric && (

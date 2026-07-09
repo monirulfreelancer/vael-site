@@ -17,7 +17,7 @@ export default async function AdminDashboard() {
   return (
     <div>
       <h1 className="text-2xl font-semibold">Dashboard</h1>
-      <p className="mt-2 text-muted">
+      <p className="mt-2 text-text/70">
         Everything you publish here goes live within a minute.
       </p>
 

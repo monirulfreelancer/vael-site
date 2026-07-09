@@ -69,7 +69,7 @@ export default function Counter({
 
   return (
     <div ref={ref}>
-      <div className="text-3xl font-semibold text-accent">{display}</div>
+      <div className="text-3xl font-bold text-accent">{display}</div>
       <div className="mt-1 font-mono text-xs text-muted">{label}</div>
     </div>
   );

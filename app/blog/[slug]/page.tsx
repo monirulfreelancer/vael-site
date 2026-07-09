@@ -135,12 +135,12 @@ export default async function BlogPostPage({
             <p className="text-xl font-medium">
               Need help building something like this?
             </p>
-            <p className="mt-2 text-muted">
+            <p className="mt-2 text-text/70">
               We scope every project in a free consultation.
             </p>
             <a
               href="/order"
-              className="btn-primary mt-5 inline-block rounded-full bg-accent px-8 py-4 text-sm font-medium text-bg hover:bg-accent-dim"
+              className="btn-primary mt-5 inline-block rounded-full bg-accent px-8 py-4 text-base font-medium text-bg hover:bg-accent-dim"
             >
               Start your project
             </a>

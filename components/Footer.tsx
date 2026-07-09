@@ -43,7 +43,7 @@ export default function Footer() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="text-muted transition-colors hover:text-text"
+                    className="text-text/65 transition-colors hover:text-text"
                   >
                     {link.label}
                   </a>
@@ -60,7 +60,7 @@ export default function Footer() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="text-muted transition-colors hover:text-text"
+                    className="text-text/65 transition-colors hover:text-text"
                   >
                     {link.label}
                   </a>

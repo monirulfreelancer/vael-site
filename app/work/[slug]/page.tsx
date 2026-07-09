@@ -107,7 +107,7 @@ export default async function CaseStudyPage({
                 <div className="text-2xl font-semibold text-accent sm:text-3xl">
                   {metric.value}
                 </div>
-                <div className="mt-1 font-mono text-[11px] text-muted">
+                <div className="mt-1 font-mono text-xs text-muted">
                   {metric.label}
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default async function CaseStudyPage({
             <p className="text-xl font-medium">Have a similar problem?</p>
             <a
               href="/order"
-              className="btn-primary mt-5 inline-block rounded-full bg-accent px-8 py-4 text-sm font-medium text-bg hover:bg-accent-dim"
+              className="btn-primary mt-5 inline-block rounded-full bg-accent px-8 py-4 text-base font-medium text-bg hover:bg-accent-dim"
             >
               Start your project
             </a>

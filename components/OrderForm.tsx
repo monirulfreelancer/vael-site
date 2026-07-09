@@ -146,8 +146,8 @@ export default function OrderForm() {
                           : "border-border bg-surface hover:border-accent/40"
                       }`}
                     >
-                      <div className="font-medium">{s.name}</div>
-                      <div className="mt-0.5 text-sm text-muted">
+                      <div className="font-medium text-text">{s.name}</div>
+                      <div className="mt-0.5 text-base text-text/70">
                         {s.description}
                       </div>
                     </button>
@@ -220,28 +220,28 @@ export default function OrderForm() {
                   value={form.name}
                   onChange={(e) => update("name", e.target.value)}
                   placeholder="Name"
-                  className="w-full rounded-lg border border-border bg-white px-4 py-3 outline-none transition-colors focus:border-accent"
+                  className="w-full rounded-lg border border-border bg-white px-4 py-3 text-text outline-none transition-colors placeholder:text-muted focus:border-accent"
                 />
                 <input
                   type="email"
                   value={form.email}
                   onChange={(e) => update("email", e.target.value)}
                   placeholder="Email"
-                  className="w-full rounded-lg border border-border bg-white px-4 py-3 outline-none transition-colors focus:border-accent"
+                  className="w-full rounded-lg border border-border bg-white px-4 py-3 text-text outline-none transition-colors placeholder:text-muted focus:border-accent"
                 />
                 <input
                   type="text"
                   value={form.company}
                   onChange={(e) => update("company", e.target.value)}
                   placeholder="Company (optional)"
-                  className="w-full rounded-lg border border-border bg-white px-4 py-3 outline-none transition-colors focus:border-accent"
+                  className="w-full rounded-lg border border-border bg-white px-4 py-3 text-text outline-none transition-colors placeholder:text-muted focus:border-accent"
                 />
                 <textarea
                   value={form.details}
                   onChange={(e) => update("details", e.target.value)}
                   rows={5}
                   placeholder="Tell us the problem you are trying to solve, who it is for, and anything you have already tried."
-                  className="w-full rounded-lg border border-border bg-white px-4 py-3 outline-none transition-colors focus:border-accent"
+                  className="w-full rounded-lg border border-border bg-white px-4 py-3 text-text outline-none transition-colors placeholder:text-muted focus:border-accent"
                 />
               </div>
             </div>

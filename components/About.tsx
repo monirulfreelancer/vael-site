@@ -56,7 +56,7 @@ export default function About() {
                 engineering with AI-accelerated workflows, so you get work that
                 used to take agencies months, delivered in weeks.
               </p>
-              <p className="mt-5 leading-relaxed text-text/70">
+              <p className="mt-5 leading-relaxed text-text/80">
                 You will not be handed off to account managers or junior
                 developers. You work directly with the people building your
                 product. We scope tightly, ship fast, and stay focused on

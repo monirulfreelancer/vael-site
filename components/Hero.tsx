@@ -54,7 +54,7 @@ export default function Hero() {
             </a>
             <a
               href="#work"
-              className="group inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm text-text transition-colors hover:border-accent-dim"
+              className="group inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-base text-text transition-colors hover:border-accent-dim"
             >
               See our work
               <span

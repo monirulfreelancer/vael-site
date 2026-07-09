@@ -39,7 +39,7 @@ export default function ClientLogos() {
     >
       <div className="mx-auto max-w-6xl px-5 text-center sm:px-8">
         <Reveal>
-          <span id="clients-heading" className="eyebrow text-center mb-8 text-muted">
+          <span id="clients-heading" className="eyebrow text-center mb-8">
             Companies we have worked with
           </span>
         </Reveal>
@@ -69,7 +69,7 @@ export default function ClientLogos() {
                   >
                     {initials(client)}
                   </span>
-                  <span className="whitespace-nowrap font-display text-lg font-medium tracking-tight text-muted/80 underline decoration-transparent underline-offset-[6px] transition-colors group-hover:text-text group-hover:decoration-accent">
+                  <span className="whitespace-nowrap font-display text-lg font-medium tracking-tight text-text/75 underline decoration-transparent underline-offset-[6px] transition-colors group-hover:text-text group-hover:decoration-accent">
                     {client}
                   </span>
                 </div>

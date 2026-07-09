@@ -45,7 +45,7 @@ export default function CTA() {
             </a>
             <a
               href="/work"
-              className="rounded-full border border-border px-6 py-3 text-sm text-text transition-colors hover:border-accent-dim"
+              className="rounded-full border border-border px-6 py-3 text-base text-text transition-colors hover:border-accent-dim"
             >
               See our work
             </a>

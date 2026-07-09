@@ -138,7 +138,7 @@ export default function Pricing() {
               className={`rounded-md px-4 py-2 transition-colors duration-200 ${
                 mode === m.key
                   ? "bg-accent text-bg"
-                  : "text-muted hover:text-text"
+                  : "text-text/60 hover:text-text"
               }`}
             >
               {m.label}
@@ -165,7 +165,7 @@ export default function Pricing() {
               }`}
             >
               {tier.popular && (
-                <span className="absolute -top-3 left-7 rounded-full bg-accent px-3 py-1 font-mono text-[11px] text-bg">
+                <span className="absolute -top-3 left-7 rounded-full bg-accent px-3 py-1 font-mono text-xs text-bg">
                   Most popular
                 </span>
               )}
@@ -175,7 +175,9 @@ export default function Pricing() {
                 {tier.subtitle}
               </p>
 
-              <p className="mt-5 text-4xl font-semibold">{tier.price}</p>
+              <p className="mt-5 text-4xl font-semibold text-text">
+                {tier.price}
+              </p>
               <p className="mt-1 font-mono text-xs text-accent">
                 {tier.timeline}
               </p>
@@ -184,7 +186,7 @@ export default function Pricing() {
                 {tier.features.map((feature) => (
                   <li
                     key={feature}
-                    className="relative pl-5 text-base leading-relaxed text-text/70"
+                    className="relative pl-5 text-base leading-relaxed text-text/75"
                   >
                     <span aria-hidden className="absolute left-0 text-accent">
                       ✓
@@ -213,7 +215,7 @@ export default function Pricing() {
         </div>
 
         <Reveal>
-          <p className="mt-8 text-muted">
+          <p className="mt-8 text-text/70">
             Not sure which fits? Every project starts with a free consultation
             where we scope it together.{" "}
             <span className="text-text">

@@ -89,7 +89,7 @@ export default function Process() {
                   <span className="font-mono text-3xl text-accent">
                     {phase.number}
                   </span>
-                  <span className="rounded-full border border-border px-2.5 py-1 font-mono text-[11px] text-muted">
+                  <span className="rounded-full border border-border px-2.5 py-1 font-mono text-xs text-muted">
                     {phase.timeline}
                   </span>
                 </div>
@@ -123,7 +123,7 @@ export default function Process() {
         </div>
 
         <Reveal>
-          <p className="mt-8 text-base leading-relaxed text-muted">
+          <p className="mt-8 text-base leading-relaxed text-text/70">
             Typical MVP runs six weeks. Larger builds run eight to twelve. Every
             timeline is fixed and agreed before we start.
           </p>

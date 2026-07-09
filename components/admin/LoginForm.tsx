@@ -41,7 +41,7 @@ export default function LoginForm() {
       </div>
 
       <h1 className="mt-6 text-center text-2xl font-semibold">Sign in</h1>
-      <p className="mt-2 text-center text-sm text-muted">
+      <p className="mt-2 text-center text-sm text-text/70">
         Manage posts and case studies.
       </p>
 
@@ -52,7 +52,7 @@ export default function LoginForm() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           autoComplete="email"
-          className="w-full rounded-lg border border-border bg-white px-4 py-3 outline-none transition-colors focus:border-accent"
+          className="w-full rounded-lg border border-border bg-white px-4 py-3 text-text outline-none transition-colors placeholder:text-muted focus:border-accent"
         />
         <input
           type="password"
@@ -60,7 +60,7 @@ export default function LoginForm() {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           autoComplete="current-password"
-          className="w-full rounded-lg border border-border bg-white px-4 py-3 outline-none transition-colors focus:border-accent"
+          className="w-full rounded-lg border border-border bg-white px-4 py-3 text-text outline-none transition-colors placeholder:text-muted focus:border-accent"
         />
       </div>
 

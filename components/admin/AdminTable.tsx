@@ -18,7 +18,7 @@ export default function AdminTable({
       <div className="flex items-start justify-between gap-4">
         <div>
           <h1 className="text-2xl font-semibold">{heading}</h1>
-          <p className="mt-2 text-muted">{subtitle}</p>
+          <p className="mt-2 text-text/70">{subtitle}</p>
         </div>
         <a
           href={newHref}

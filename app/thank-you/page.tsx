@@ -26,13 +26,13 @@ export default function ThankYouPage() {
           <div className="mt-8 flex items-center justify-center gap-3">
             <a
               href="/"
-              className="btn-primary rounded-full bg-accent px-8 py-4 text-sm font-medium text-bg hover:bg-accent-dim"
+              className="btn-primary rounded-full bg-accent px-8 py-4 text-base font-medium text-bg hover:bg-accent-dim"
             >
               Back to home
             </a>
             <a
               href="/blog"
-              className="rounded-full border border-border px-6 py-3 text-sm text-text transition-colors hover:border-accent-dim"
+              className="rounded-full border border-border px-6 py-3 text-base text-text transition-colors hover:border-accent-dim"
             >
               Read the blog
             </a>
