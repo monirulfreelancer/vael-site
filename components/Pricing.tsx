@@ -120,11 +120,11 @@ export default function Pricing() {
           <span className="eyebrow">Engagement models</span>
           <h2
             id="pricing-heading"
-            className="mt-6 max-w-2xl text-4xl font-semibold sm:text-5xl"
+            className="mt-6 max-w-2xl text-4xl font-bold sm:text-5xl"
           >
             Transparent pricing, scoped to your project.
           </h2>
-          <p className="mt-4 max-w-xl text-xl leading-relaxed text-muted">
+          <p className="mt-4 max-w-xl text-xl leading-relaxed text-text/85">
             No hourly billing surprises.
           </p>
         </Reveal>
@@ -170,7 +170,7 @@ export default function Pricing() {
                 </span>
               )}
 
-              <h3 className="text-xl font-semibold">{tier.name}</h3>
+              <h3 className="text-xl font-semibold text-text">{tier.name}</h3>
               <p className="mt-1 font-mono text-xs text-muted">
                 {tier.subtitle}
               </p>
@@ -184,7 +184,7 @@ export default function Pricing() {
                 {tier.features.map((feature) => (
                   <li
                     key={feature}
-                    className="relative pl-5 text-base leading-relaxed text-muted"
+                    className="relative pl-5 text-base leading-relaxed text-text/70"
                   >
                     <span aria-hidden className="absolute left-0 text-accent">
                       ✓

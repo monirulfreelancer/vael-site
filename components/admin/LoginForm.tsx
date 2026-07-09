@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Logo from "@/components/Logo";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -36,12 +37,7 @@ export default function LoginForm() {
       className="w-full max-w-sm rounded-2xl border border-border bg-surface p-8"
     >
       <div className="flex justify-center">
-        <span
-          aria-hidden
-          className="flex h-9 w-9 items-center justify-center rounded-md border border-accent font-mono text-accent"
-        >
-          V
-        </span>
+        <Logo size={32} />
       </div>
 
       <h1 className="mt-6 text-center text-2xl font-semibold">Sign in</h1>

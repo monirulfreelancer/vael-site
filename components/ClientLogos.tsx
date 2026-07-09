@@ -19,6 +19,14 @@ const clients = [
   "Team Soft Solutions",
 ];
 
+// First letter of the first two words, or the first two letters for
+// single-word names.
+function initials(name: string): string {
+  const words = name.split(" ");
+  if (words.length >= 2) return (words[0][0] + words[1][0]).toUpperCase();
+  return name.slice(0, 2).toUpperCase();
+}
+
 export default function ClientLogos() {
   return (
     <section
@@ -51,12 +59,20 @@ export default function ClientLogos() {
           {[0, 1].map((copy) => (
             <div key={copy} className="flex items-center" aria-hidden={copy === 1}>
               {clients.map((client) => (
-                <span
+                <div
                   key={client}
-                  className="shrink-0 whitespace-nowrap px-12 font-display text-xl font-medium tracking-tight text-muted/80 underline decoration-transparent underline-offset-[6px] transition-colors hover:text-text hover:decoration-accent"
+                  className="group flex shrink-0 items-center gap-3 px-12"
                 >
-                  {client}
-                </span>
+                  <span
+                    aria-hidden
+                    className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface font-mono text-xs font-semibold text-accent"
+                  >
+                    {initials(client)}
+                  </span>
+                  <span className="whitespace-nowrap font-display text-lg font-medium tracking-tight text-muted/80 underline decoration-transparent underline-offset-[6px] transition-colors group-hover:text-text group-hover:decoration-accent">
+                    {client}
+                  </span>
+                </div>
               ))}
             </div>
           ))}

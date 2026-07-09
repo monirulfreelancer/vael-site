@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Logo from "@/components/Logo";
 import { getSession } from "@/lib/auth";
 
 export const metadata: Metadata = {
@@ -20,13 +21,7 @@ export default async function AdminLayout({
         <header className="h-14 border-b border-border bg-surface">
           <div className="mx-auto flex h-full max-w-5xl items-center justify-between px-5">
             <a href="/admin" className="flex items-center gap-2.5">
-              <span
-                aria-hidden
-                className="flex h-7 w-7 items-center justify-center rounded-md border border-accent font-mono text-sm text-accent"
-              >
-                V
-              </span>
-              <span className="font-display text-lg font-semibold">Vael</span>
+              <Logo />
               <span className="font-mono text-xs text-muted">Admin</span>
             </a>
             <form action="/api/admin/logout" method="post">

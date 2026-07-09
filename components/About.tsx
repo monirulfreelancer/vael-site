@@ -56,7 +56,7 @@ export default function About() {
                 engineering with AI-accelerated workflows, so you get work that
                 used to take agencies months, delivered in weeks.
               </p>
-              <p className="mt-5 leading-relaxed text-muted">
+              <p className="mt-5 leading-relaxed text-text/70">
                 You will not be handed off to account managers or junior
                 developers. You work directly with the people building your
                 product. We scope tightly, ship fast, and stay focused on
@@ -90,7 +90,7 @@ export default function About() {
                 </div>
                 <div>
                   <div className="font-semibold">{pillar.title}</div>
-                  <div className="mt-1 text-base leading-relaxed text-muted">
+                  <div className="mt-1 text-base leading-relaxed text-text/70">
                     {pillar.description}
                   </div>
                 </div>

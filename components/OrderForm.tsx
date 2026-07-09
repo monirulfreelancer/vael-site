@@ -109,7 +109,7 @@ export default function OrderForm() {
         <h1 className="mt-6 text-3xl font-semibold sm:text-4xl">
           Tell us what you are building.
         </h1>
-        <p className="mt-4 text-muted">
+        <p className="mt-4 leading-relaxed text-text/85">
           Answer a few questions and we will come back within one business day
           with next steps and a free consultation slot.
         </p>

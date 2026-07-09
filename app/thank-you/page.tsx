@@ -19,7 +19,7 @@ export default function ThankYouPage() {
           <h1 className="mt-6 text-3xl font-semibold">
             Thanks, we have your project details.
           </h1>
-          <p className="mt-4 leading-relaxed text-muted">
+          <p className="mt-4 leading-relaxed text-text/85">
             We read every message ourselves. Expect a reply within one business
             day with next steps and a time for your free consultation.
           </p>

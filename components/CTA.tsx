@@ -28,11 +28,11 @@ export default function CTA() {
           <span className="eyebrow text-center">Let us build it</span>
           <h2
             id="cta-heading"
-            className="h-display mt-6 text-4xl font-semibold sm:text-6xl"
+            className="h-display mt-6 text-4xl font-bold sm:text-6xl"
           >
             Your project could ship in six weeks.
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-xl leading-relaxed text-muted">
+          <p className="mx-auto mt-6 max-w-xl text-xl leading-relaxed text-text/85">
             Tell us what you are building. We will come back within one
             business day with a fixed scope, a fixed price, and a start date.
           </p>

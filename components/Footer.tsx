@@ -1,3 +1,5 @@
+import Logo from "./Logo";
+
 // Note: the email and social URLs below are placeholders. Replace hello@vael.studio
 // and the x.com / linkedin.com links with the real accounts before launch.
 const siteLinks = [
@@ -22,16 +24,10 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="flex flex-col items-start justify-between gap-10 sm:flex-row">
           <div className="max-w-xs">
-            <a href="/" className="flex items-center gap-2.5">
-              <span
-                aria-hidden
-                className="flex h-7 w-7 items-center justify-center rounded-md border border-accent font-mono text-sm text-accent"
-              >
-                V
-              </span>
-              <span className="font-display text-lg font-semibold">Vael</span>
+            <a href="/" className="flex items-center">
+              <Logo />
             </a>
-            <p className="mt-4 text-base leading-relaxed text-muted">
+            <p className="mt-4 text-base leading-relaxed text-text/70">
               We build AI software that does real work. Senior engineering,
               AI-accelerated delivery.
             </p>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Logo from "./Logo";
 
 const links = [
   { href: "#services", label: "Services" },
@@ -31,14 +32,8 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="/" className="flex items-center gap-2.5">
-          <span
-            aria-hidden
-            className="flex h-7 w-7 items-center justify-center rounded-md border border-accent font-mono text-sm text-accent"
-          >
-            V
-          </span>
-          <span className="font-display text-lg font-semibold">Vael</span>
+        <a href="/" className="flex items-center">
+          <Logo />
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -46,7 +41,7 @@ export default function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="nav-link text-sm text-muted transition-colors hover:text-text"
+              className="nav-link text-sm font-medium text-muted transition-colors hover:text-text"
             >
               {link.label}
             </a>
@@ -104,7 +99,7 @@ export default function Nav() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-2 py-2 text-sm text-muted transition-colors hover:text-text"
+                className="rounded-md px-2 py-2 text-sm font-medium text-muted transition-colors hover:text-text"
               >
                 {link.label}
               </a>

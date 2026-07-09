@@ -30,7 +30,7 @@ export default async function BlogPage() {
             <h1 className="mt-6 text-3xl font-semibold sm:text-4xl">
               Notes on building AI software that works.
             </h1>
-            <p className="mt-4 max-w-xl text-muted">
+            <p className="mt-4 max-w-xl leading-relaxed text-text/85">
               Practical writing on what we learn shipping AI products for real
               businesses.
             </p>

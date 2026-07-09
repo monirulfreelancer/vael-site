@@ -75,7 +75,7 @@ export default function Process() {
           <span className="eyebrow">How we work</span>
           <h2
             id="process-heading"
-            className="mt-6 max-w-2xl text-4xl font-semibold sm:text-5xl"
+            className="mt-6 max-w-2xl text-4xl font-bold sm:text-5xl"
           >
             A clear path from idea to launch. No surprises, no black box.
           </h2>
@@ -95,7 +95,7 @@ export default function Process() {
                 </div>
 
                 <h3 className="mt-5 text-xl font-semibold">{phase.name}</h3>
-                <p className="mt-2 text-base leading-relaxed text-muted">
+                <p className="mt-2 text-base leading-relaxed text-text/70">
                   {phase.description}
                 </p>
 
@@ -103,7 +103,7 @@ export default function Process() {
                   {phase.bullets.map((bullet) => (
                     <li
                       key={bullet}
-                      className="relative pl-4 text-base leading-relaxed text-muted"
+                      className="relative pl-4 text-base leading-relaxed text-text/70"
                     >
                       <span aria-hidden className="absolute left-0 text-accent">
                         ·

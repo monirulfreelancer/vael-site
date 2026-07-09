@@ -32,14 +32,14 @@ export default function Hero() {
         <Reveal delay={80}>
           <h1
             id="hero-heading"
-            className="h-display mt-6 text-5xl font-semibold sm:text-6xl lg:text-7xl"
+            className="h-display mt-6 text-5xl font-bold sm:text-6xl lg:text-7xl"
           >
             We build <span className="text-accent">AI software</span> that does{" "}
             <span className="text-accent">real work</span> for your business.
           </h1>
         </Reveal>
         <Reveal delay={160}>
-          <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-muted sm:text-2xl">
+          <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-text/85 sm:text-2xl">
             Custom AI apps, agents, and automation. From first idea to
             production, built by senior engineers and shipped in weeks.
           </p>
@@ -67,7 +67,7 @@ export default function Hero() {
           </div>
         </Reveal>
         <Reveal delay={320}>
-          <p className="mt-10 font-mono text-sm tracking-[0.08em] text-muted">
+          <p className="mt-10 font-mono text-sm tracking-[0.08em] text-text/60">
             AI agents · custom apps · automation · web and mobile
           </p>
         </Reveal>

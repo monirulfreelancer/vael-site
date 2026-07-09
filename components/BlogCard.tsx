@@ -14,9 +14,11 @@ export default function BlogCard({ post }: { post: PostMeta }) {
         ))}
       </div>
 
-      <h3 className="mt-4 text-2xl font-semibold leading-snug">{post.title}</h3>
+      <h3 className="mt-4 text-2xl font-semibold leading-snug text-text">
+        {post.title}
+      </h3>
 
-      <p className="mt-3 line-clamp-3 text-base leading-relaxed text-muted">
+      <p className="mt-3 line-clamp-3 text-base leading-relaxed text-text/70">
         {post.description}
       </p>
 
