@@ -1,0 +1,29 @@
+---
+title: "Cutting search time from 45 seconds to 16 milliseconds"
+industry: "B2B SaaS, our own product"
+client: "FridayLead"
+year: 2026
+duration: "Ongoing"
+services: ["Custom Software & MVPs", "AI-Powered Apps"]
+thumbnail: "/work/fridaylead-cover.svg"
+featured: true
+metrics:
+  - value: "45s to 16ms"
+    label: "Browse query time"
+  - value: "4.6M+"
+    label: "Leads in database"
+  - value: "99"
+    label: "PageSpeed score"
+---
+## The challenge
+FridayLead is our own B2B lead generation platform. As the database grew past four million contacts, browse queries slowed to 45 seconds and keyword search took over 30 seconds. The product was becoming unusable at exactly the moment it had the most to offer.
+
+## The solution
+We rebuilt the data layer around a materialized view with precomputed filter columns, disabled PostgreSQL JIT where it hurt, capped expensive counts, and moved search onto OpenSearch with automatic sync for new data. No hardware upgrade, the same VPS.
+
+## Results
+- Browse queries went from 45 seconds to 16 milliseconds
+- Keyword search dropped from over 30 seconds to about 3 seconds
+- Exact-match filters returned in 27 milliseconds
+- Google PageSpeed performance score of 99
+- This is our own product, live at fridaylead.com

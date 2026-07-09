@@ -1,10 +1,8 @@
 import Counter from "./Counter";
 import Reveal from "./Reveal";
 
-// Placeholder metrics: replace with real numbers before launch, and delete any
-// stat you cannot honestly claim.
 const stats = [
-  { value: "[X]+", label: "Projects shipped" },
+  { value: "50+", label: "Projects shipped" },
   { value: "6 wks", label: "Avg delivery" },
   { value: "100%", label: "On-time delivery" },
   { value: "AI-first", label: "Every project" },

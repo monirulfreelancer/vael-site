@@ -10,7 +10,6 @@ import Pricing from "@/components/Pricing";
 import Process from "@/components/Process";
 import Products from "@/components/Products";
 import Services from "@/components/Services";
-import Testimonials from "@/components/Testimonials";
 
 export const revalidate = 60;
 
@@ -26,7 +25,6 @@ export default function Home() {
         <CaseStudies />
         <Process />
         <Pricing />
-        <Testimonials />
         <About />
         <FAQ />
         <CTA />

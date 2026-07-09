@@ -1,7 +1,4 @@
 import Logo from "./Logo";
-
-// Note: the email and social URLs below are placeholders. Replace hello@vael.studio
-// and the x.com / linkedin.com links with the real accounts before launch.
 const siteLinks = [
   { href: "/#services", label: "Services" },
   { href: "/work", label: "Work" },
@@ -11,9 +8,8 @@ const siteLinks = [
 ];
 
 const connectLinks = [
-  { href: "mailto:hello@vael.studio", label: "Email" },
-  { href: "https://x.com", label: "X" },
-  { href: "https://linkedin.com", label: "LinkedIn" },
+  { href: "mailto:monirulfreelancer@gmail.com", label: "Email" },
+  { href: "https://www.linkedin.com/in/angleleadmonirul", label: "LinkedIn" },
 ];
 
 export default function Footer() {

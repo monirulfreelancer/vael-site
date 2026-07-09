@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 // Split "20+" into { prefix: "", digits: "20", suffix: "+" }. Returns null when
-// the value has no integer to animate (for example "AI-first" or "[X]+").
+// the value has no integer to animate (for example "AI-first").
 function parse(value: string) {
   const match = value.match(/^(\D*)(\d+)(.*)$/);
   if (!match) return null;

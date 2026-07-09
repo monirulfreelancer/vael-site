@@ -96,7 +96,7 @@ export default function OrderForm() {
       throw new Error("Request failed");
     } catch {
       setError(
-        "Something went wrong. Please email us directly at hello@vael.studio."
+        "Something went wrong. Please email us directly at monirulfreelancer@gmail.com."
       );
       setSubmitting(false);
     }

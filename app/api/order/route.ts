@@ -46,7 +46,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         from: process.env.CONTACT_FROM || "Vael <onboarding@resend.dev>",
-        to: process.env.CONTACT_TO || "hello@vael.studio",
+        to: process.env.CONTACT_TO || "monirulfreelancer@gmail.com",
         reply_to: email,
         subject: `New project inquiry from ${name}`,
         text,
